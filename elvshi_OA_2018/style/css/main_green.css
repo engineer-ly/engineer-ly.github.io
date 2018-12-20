@@ -1,0 +1,61 @@
+*{
+	font-weight: 300;
+}
+
+/*顶部状态栏颜色*/
+.navbar-default{
+	background-color: #6FD9A5;
+	border-color: #e7e7e7;
+}
+
+.news_badge{
+	background-color: #5FC191;
+}
+
+
+
+
+
+
+/*一级菜单开关颜色*/
+.home_nav_flex{
+	background-color: #5FC191;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/*当前选中栏目颜色*/
+.home_btn_on{
+	background-color: #47A678 !important;
+}
+
+
+/*一级菜单背景色*/
+.home_nav{
+	background-color: #5FC191;
+}
+#view{
+	background-color: #5FC191;
+}
+
+/*一级菜单栏目悬停色*/
+.btn1_hover:hover{
+	background-color: #6CD7A3;
+	color: #fff;
+}
+
+/*二级菜单背景色*/
+.home_nav2{
+	background-color: #47A678;
+}
+.home_nav2 ul li button{
+	background-color: #47A678;
+}
+.home_nav2 .home_btn_on{
+	color: #47A678 !important;
+}
+/*二级菜单栏目悬停色*/
+.home_nav2 ul li button:hover,.home_nav2 ul li button:focus{
+	background-color: #3C9369;
+	color: #fff;
+}
+

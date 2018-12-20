@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>盘石金融</title>
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/apply-loan.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="header">
+        <ul>
+            <li class="index-name">
+                <a class="tit">盘石金融</a>
+            </li>
+            <li>
+                <a href="index.html" class="tit nav-list">首页</a>
+            </li>
+            <li>
+                <a href="apply-loan.html" class="tit nav-list">申请贷款</a>
+            </li>
+            <!-- <li>
+                <a href="personal-center.html" class="tit nav-list">个人中心</a>
+            </li> -->
+            <li class="move-left">
+                <div>
+                        <a href="personal-center.html" class="tit nav-list">个人中心</a>
+                    <a href="#" id="login">登录</a>/
+                    <a href="#" id="register">注册</a>
+                </div>
+                <!-- <div class="user-account">
+                    <a href="#" id="account">15895968473</a>
+                    <a href="#" id="exit">退出</a>
+                </div> -->
+            </li>
+        </ul>
+    </header>
+    <!-- 正文 -->
+    <section class="main-content">
+        <!-- 介绍 -->
+        <div class="head-top">
+            <div class="head-title">
+                <span>申请贷款</span>
+            </div>
+        </div>
+        <!-- 填写信息 -->
+        <div class="info-form">
+            <div class="choose-info">
+                <div>
+                    <p class="choose-tit">选择金额</p>
+                    <ul>
+                        <li class="money-list active">
+                            <span>4000.00</span>
+                            <span>RUB</span>
+
+                        </li>
+                        <li class="money-list">
+                            <span>8000.00</span>
+                            <span>RUB</span>
+                        </li>
+                        <li class="money-list">
+                            <span>12000.00</span>
+                            <span>RUB</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="choose-tit">选择期限</p>
+                    <ul>
+                        <li class="date-list">
+                            <span>7天</span>
+                        </li>
+                        <li class="date-list">
+                            <span>14天</span>
+                        </li>
+                        <li class="date-list">
+                            <span>21天</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="choose-tit">日利率</p>
+                    <span class="percent">1.5%</span>
+                </div>
+            </div>
+            <div class="underline"></div>
+            <div class="input-info">
+                <div>
+                    <p class="choose-tit">个人信息</p>
+                    <ul class="form-box">
+                        <li class="info-kind">
+                            <p>名</p>
+                            <input type="text" class="" placeholder="请输入">
+                        </li>
+                        <li class="info-kind">
+                            <p>父名</p>
+                            <input type="text" class="" placeholder="请输入">
+                        </li>
+                        <li class="info-kind">
+                            <p>姓氏</p>
+                            <input type="text" class="" placeholder="请输入">
+                        </li>
+                        <li class="info-kind">
+                            <p>邮箱</p>
+                            <input type="text" class="" placeholder="请输入">
+                        </li>
+                        <li class="info-kind">
+                            <p>银行卡</p>
+                            <input type="text" class="" placeholder="请输入">
+                        </li>
+                        <li class="info-kind">
+                            <p>护照号</p>
+                            <input type="text" class="" placeholder="请输入">
+                        </li>
+                        <li class="info-kind">
+                            <p>地区</p>
+                            <div class="select_box">
+                                <select>
+                                    <option>Иванов</option>
+                                    <option>Иванов</option>
+                                    <option>Иванов</option>
+                                </select>
+                            </div>
+                            <div class="select_box">
+                                <select>
+                                    <option>Иванов</option>
+                                    <option>Иванов</option>
+                                    <option>Иванов</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="#" class="submit-btn">提交</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- 底部 -->
+    <div class="footers">
+        <div class="foots-box">
+            <div class="foots-list">
+                <p>E-mail</p>
+                <span>52661262@adpanshi.com</span>
+            </div>
+            <div class="foots-list">
+                <p>许可证</p>
+                <span>№1460 от 24.10.2014 г.</span>
+            </div>
+            <div class="foots-list">
+                <p>版权所有</p>
+                <span>© 2006-2018, ПАО КБ «Восточный»</span>
+            </div>
+        </div>
+    </div>
+    <!-- 弹出层 -->
+    <div class="modal-box">
+        <div class="layer"></div>
+        <div class="login-form">
+            <div class="form-head">
+                <div class="no-return">
+                    <a href="#" class="login-tit active">
+                        <span>登录</span>
+                    </a>
+                    <a href="#" class="register-tit">
+                        <span>注册</span>
+                    </a>
+                    <img src="static/img/close.png" class="default clearfix">
+                </div>
+                <div class="has-return">
+                    <img src="static/img/return.png" class="return-icon">
+                    <span class="reset-tit">重置密码</span>
+                    <img src="static/img/close.png" class="default clearfix">
+                </div>
+            </div>
+            <div class="form-body login-type">
+                <div class="input-box">
+                    <p class="label-name">手机号</p>
+                    <input class="input" type="text" placeholder="请输入手机号">
+                </div>
+                <div class="input-box">
+                    <p class="label-name">密码</p>
+                    <input class="input" type="text" placeholder="请输入密码">
+                </div>
+                <a href="#" class="forget-password">忘记密码</a>
+                <a id="loain-submit" href="#" class="modal-btn">登录</a>
+            </div>
+            <div class="form-body register-type">
+                <div class="input-box">
+                    <p class="label-name">手机号</p>
+                    <input class="input" type="text" placeholder="请输入手机号">
+                </div>
+                <div class="input-box">
+                    <p class="label-name">验证码</p>
+                    <input class="input identify-input" type="text" placeholder="请输入验证码">
+                    <a href="#" class="identify">получить доступ </a>
+                </div>
+                <div class="input-box">
+                    <p class="label-name">设置密码</p>
+                    <input class="input" type="text" placeholder="请输入密码">
+                </div>
+                <div class="input-box">
+                    <p class="label-name">确认密码</p>
+                    <input class="input" type="text" placeholder="请再次输入密码">
+                </div>
+                <a href="#" class="modal-btn">提交</a>
+            </div>
+            <div class="form-body password-type">
+                <div class="input-box">
+                    <p class="label-name">手机号</p>
+                    <input class="input" type="text" placeholder="请输入手机号">
+                </div>
+                <div class="input-box">
+                    <p class="label-name">验证码</p>
+                    <input class="input identify-input" type="text" placeholder="请输入验证码">
+                    <a href="#" class="identify">получить доступ </a>
+                </div>
+                <div class="input-box">
+                    <p class="label-name">重置密码</p>
+                    <input class="input" type="text" placeholder="请输入密码">
+                </div>
+                <div class="input-box">
+                    <p class="label-name">确认密码</p>
+                    <input class="input" type="text" placeholder="请再次输入密码">
+                </div>
+                <a href="#" class="modal-btn">提交</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="static/js/jquery-1.8.3.min.js"></script>
+<script src="static/js/main.js"></script>
+<script src="static/js/apply-loan.js"></script>
+
+
+</html>

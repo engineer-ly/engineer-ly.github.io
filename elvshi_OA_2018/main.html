@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>e律师-律所办公管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" type="text/css" href="style/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style/css/main.css">
+	<link id="main_link" rel="stylesheet" type="text/css" href="">
+	<script type="text/javascript">
+		document.getElementById('main_link').href = "style/css/main_black.css";
+	</script>
+	<!-- <script type="text/javascript" src="style/js/jquery_3.js"></script> -->
+	<script src="style/js/jquery_1.11.3.min.js"></script>
+	<script type="text/javascript" src="style/js/bootstrap.js"></script>
+
+	<!-- 使ie9及以下兼容媒体查询和html5标签 -->
+	<!--[if lt IE 9]>
+    　 <script src="style/js/html5shiv.min.js"></script>
+       <script src="style/js/respond.js"></script>
+    <![endif]-->
+
+	<!-- 兼容ie8 -->
+	<!--[if lte IE 8]>
+		<link rel="stylesheet" type="text/css" href="style/css/ie8down.css">
+		<script src="style/js/ie8.js"></script>
+	<![endif]-->
+
+	
+</head>
+
+
+<body>
+
+<!-- 顶部状态栏 -->
+<div class="view" id="view">
+	<div class="home_header">
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+
+		    <div class="navbar-header">
+
+<!-- 顶部状态栏-移动端汉堡包 -->
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <div class="navbar-brand" id="main_logo">
+
+				<!-- 顶部状态栏-客户logo -->
+				<img src="style/img/logo_new.png">
+				<p class="logo_font">LAWYER</p>
+
+		      </div>
+		    </div>
+
+
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+		      <!-- 大版块 -->
+		      <ul id="section">
+		    	<li><a href="#" class="section_on">工作</a></li>
+		    	<li><a href="#">知识库</a></li>
+		    	<li><a href="#">检索</a></li>
+		    	<li><a href="#">应用商店</a></li>
+		    	<li><a href="#">发现</a></li>
+		    	<li><a href="#">支持与服务</a></li>
+		      </ul>
+
+				
+				<span class="nav_hr"></span>
+			  
+
+<!-- 顶部状态栏-右侧菜单 -->
+		      <ul class="nav navbar-nav">
+		      	<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+		          	张律师
+		          	<span class="badge" style="margin-top:-3px;">4</span>
+		          	<span class="caret" style="margin-top:-2px;"></span>
+		          </a>
+		        	<ul class="dropdown-menu">
+			            <li><a href="#" onclick="newView('page/user.html', this)">个人中心</a></li>
+			            <li><a href="#" onclick="newView('page/news.html', '消息')">消息 <span class="badge news_badge">4</span></a></li>
+			            <li><a href="#" onclick="newView('page/shop.html', this)">产品商店</a></li>
+			            <li class="ie8_hide"><a href="#" onclick="changeColor()">更换界面配色</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="index.html">退出</a></li>
+		        	</ul>
+		        </li>
+		      </ul>
+			
+
+
+				<!-- 组件入口,临时放置 -->
+				<style type="text/css">
+					.demo_1{
+						margin-right: -14px;
+						display: none;
+					}
+					.demo_1 > .btn{
+						background-color: #fff;
+						padding: 4px;
+						font-size: 12px;
+					}
+				</style>
+				<div style="float: right;margin-top: 11px;font-weight: 400;" class="demo_1">
+					
+					<button class="btn" onclick="toThisPage('parts_input1.html')">表单1</button>
+					<button class="btn" onclick="toThisPage('parts_input2.html')">表单2</button>
+					<button class="btn" onclick="toThisPage('parts_input3.html')">表单3</button>
+					<button class="btn" onclick="toThisPage('parts_table1.html')">列表</button>
+					<button class="btn" onclick="toThisPage('parts_table2.html')">表格</button>
+					<button class="btn" onclick="showCue(0)">提示框</button>
+				</div>
+
+
+
+		    </div>
+		  </div>
+		</nav>
+	</div>
+
+
+<!-- 左侧一级导航栏 -->
+	<nav class="home_nav" id="home_nav">
+		<button class="home_nav_flex btn1_hover" id="home_btn_flex" >
+
+		<!-- 展开一级菜单icon -->
+			<svg width="25px" height="12px" viewBox="0 0 25 12" version="1.1">
+			    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.6">
+			        <g id="主菜单-一级" transform="translate(-18.000000, -9.000000)" fill="#FFFFFF">
+			            <g id="Group-3" transform="translate(18.000000, 9.000000)">
+			                <polygon id="Triangle-2" transform="translate(20.000000, 6.000000) rotate(90.000000) translate(-20.000000, -6.000000)" points="20 1 26 11 14 11"></polygon>
+			                <polygon id="Triangle-2-Copy" transform="translate(5.000000, 6.000000) rotate(-90.000000) translate(-5.000000, -6.000000)" points="5 1 11 11 -1 11"></polygon>
+			            </g>
+			        </g>
+			    </g>
+			</svg>
+		
+		<!-- 收起一级菜单icon -->
+			<svg width="25px" height="12px" viewBox="0 0 25 12" version="1.1" style="display: none;">
+			    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.6">
+			        <g id="主菜单-一级" transform="translate(-18.000000, -9.000000)" fill="#FFFFFF">
+			            <g id="Group-3" transform="translate(18.000000, 9.000000)">
+			                <polygon id="Triangle-2" transform="translate(5.000000, 6.000000) rotate(90.000000) translate(-20.000000, -6.000000)" points="20 1 26 11 14 11"></polygon>
+			                <polygon id="Triangle-2-Copy" transform="translate(20.000000, 6.000000) rotate(-90.000000) translate(-5.000000, -6.000000)" points="5 1 11 11 -1 11"></polygon>
+			            </g>
+			        </g>
+			    </g>
+			</svg>
+
+
+
+			<!-- ie8及以下兼容icon -->
+			<svg width="25" height="12" class="ie8_icon" style="display: none;">
+			  <image xlink:href="" src="style/icon/flex.png" width="25" height="12" style="margin-top: -4px;"/>
+			</svg>
+		</button>
+
+<!-- 菜单 <-->
+		<ul class="home_menu home_menu home_menu home_menu">
+			<li class="btn btn1_hover home_btn_on" onclick="toThisMenu(this, 'page/home.html')" data-toggle="tooltip" data-placement="right">
+				<svg width="32px" height="26px" viewBox="0 0 30 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <g id="主菜单-一级" transform="translate(-15.000000, -42.000000)" fill-rule="nonzero" fill="#FFFFFF">
+				            <g id="首页" transform="translate(15.000000, 42.000000)">
+				                <polygon id="Shape" points="11.9999866 25.1612903 11.9999866 16.280833 18.0000134 16.280833 18.0000134 25.1612903 25.5000134 25.1612903 25.5000134 13.3206695 30 13.3206695 15 0 0 13.3206695 4.49998657 13.3206695 4.49998657 25.1612572 11.9999866 25.1612572"></polygon>
+				            </g>
+				        </g>
+				    </g>
+				</svg>
+
+
+				<svg width="32" height="26">
+				  <image xlink:href="" style="margin-left: 0px;" src="style/icon/home.png" width="30" height="26" class="normal"/>
+				  <image xlink:href="" style="margin-left: 0px;" src="style/icon/home_on.png" width="30" height="26" class="on"/>
+				</svg>
+				<span findThis="首页">首页</span>
+			</li>
+
+			<li class="btn btn1_hover" onclick="toThisMenu(this)" data-toggle="tooltip" data-placement="right">				
+				<svg width="32px" height="24px" viewBox="0 0 24 24" version="1.1">
+				    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <g id="导航栏" transform="translate(-990.000000, -265.000000)" fill="#FFFFFF">
+				            <g id="icon1" transform="translate(990.000000, 265.000000)">
+				                <rect id="Rectangle-7" x="0" y="0" width="11.0769231" height="11.0769231"></rect>
+				                <rect id="Rectangle-7-Copy-2" x="0" y="12.9230769" width="11.0769231" height="11.0769231"></rect>
+				                <rect id="Rectangle-7-Copy" x="12.9230769" y="0" width="11.0769231" height="11.0769231"></rect>
+				                <rect id="Rectangle-7-Copy-3" x="12.9230769" y="12.9230769" width="11.0769231" height="11.0769231"></rect>
+				            </g>
+				        </g>
+				    </g>
+				</svg>
+				<svg width="32" height="22">
+				  <image xlink:href="" style="margin-left: 3px;" src="style/icon/icon1@3x.png" width="24" height="24" class="normal"/>
+				  <image xlink:href="" style="margin-left: 3px;" src="style/icon/icon1_on@3x.png" width="24" height="24" class="on"/>
+				</svg>
+				<span>案件</span>
+			</li>
+
+
+			<li class="btn btn1_hover" onclick="toThisMenu(this)" data-toggle="tooltip" data-placement="right">
+				<svg width="32px" height="23px" viewBox="0 0 27 23" version="1.1">
+				    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <g id="导航栏" transform="translate(-989.000000, -314.000000)" fill="#FFFFFF">
+				            <path d="M989,314 L1016,314 L1016,334.25 L989,334.25 L989,314 Z M991.892857,316.892857 L991.892857,325.571429 L1000.57143,325.571429 L1000.57143,316.892857 L991.892857,316.892857 Z M1004.42857,316.892857 L1004.42857,319.785714 L1013.10714,319.785714 L1013.10714,316.892857 L1004.42857,316.892857 Z M1004.42857,321.714286 L1004.42857,323.642857 L1011.17857,323.642857 L1011.17857,321.714286 L1004.42857,321.714286 Z M991.892857,328.464286 L991.892857,331.357143 L1013.10714,331.357143 L1013.10714,328.464286 L991.892857,328.464286 Z" id="Combined-Shape"></path>
+				        </g>
+				    </g>
+				</svg>
+				<svg width="32" height="26">
+				  <image xlink:href="" src="style/icon/icon2@3x.png" width="27" height="20" class="normal"/>
+				  <image xlink:href="" src="style/icon/icon2_on@3x.png" width="27" height="20" class="on"/>
+				</svg>
+				<span>客户</span>
+			</li>
+
+			<li class="btn btn1_hover" onclick="toThisMenu(this)" data-toggle="tooltip" data-placement="right">				
+				<svg width="32px" height="24px" viewBox="0 0 26 24" version="1.1">
+				    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <g id="导航栏" transform="translate(-989.000000, -360.000000)" fill="#FFFFFF">
+				            <g id="icon2" transform="translate(989.000000, 360.000000)">
+				                <rect id="Rectangle-8" x="0" y="5.41666667" width="26" height="16.25"></rect>
+				                <rect id="Rectangle-8-Copy" x="4.33333333" y="0" width="17.3333333" height="2.16666667"></rect>
+				                <rect id="Rectangle-9" x="4.33333333" y="0" width="2.16666667" height="5.41666667"></rect>
+				                <rect id="Rectangle-9-Copy" x="19.5" y="0" width="2.16666667" height="5.41666667"></rect>
+				            </g>
+				        </g>
+				    </g>
+				</svg>
+				<svg width="32" height="26">
+				  <image xlink:href="" src="style/icon/icon3@3x.png" width="26" height="21.67" class="normal"/>
+				  <image xlink:href="" src="style/icon/icon3_on@3x.png" width="26" height="21.67" class="on"/>
+				</svg>
+				<span>档案</span>
+			</li>
+
+			
+
+			
+
+			<li class="btn btn1_hover" onclick="toThisMenu(this)" data-toggle="tooltip" data-placement="right">	
+				<svg width="32px" height="24px" viewBox="0 0 26 24" version="1.1">
+				    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <g id="导航栏" transform="translate(-989.000000, -408.000000)" fill="#FFFFFF">
+				            <g id="icon3" transform="translate(989.000000, 408.000000)">
+				                <rect id="Rectangle-6" x="0" y="5" width="6.5" height="17"></rect>
+				                <rect id="Rectangle-6-Copy" x="9.75" y="0" width="6.5" height="22"></rect>
+				                <rect id="Rectangle-6-Copy-2" x="19.5" y="10" width="6.5" height="12"></rect>
+				            </g>
+				        </g>
+				    </g>
+				</svg>
+				<svg width="32" height="26">
+				  <image xlink:href="" src="style/icon/icon4@3x.png" width="26" height="22" class="normal"/>
+				  <image xlink:href="" src="style/icon/icon4_on@3x.png" width="26" height="22" class="on"/>
+				</svg>
+				<span>统计</span>
+			</li>
+
+			<li class="btn btn1_hover" onclick="toThisMenu(this)" data-toggle="tooltip" data-placement="right">
+				
+				<svg width="32px" height="28px" viewBox="0 0 24 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <g id="主菜单-一级" transform="translate(-18.000000, -244.000000)" fill="#FFFFFF">
+				            <path d="M30,244 L42,252.71851 L37.4164079,266.825356 L22.5835921,266.825356 L18,252.71851 L30,244 Z M30,248.205849 L22,254.018189 L25.0557281,263.422753 L34.9442719,263.422753 L38,254.018189 L30,248.205849 Z" id="Combined-Shape"></path>
+				        </g>
+				    </g>
+				</svg>
+
+				<svg width="32" height="26">
+				  <image xlink:href="" src="style/icon/icon7@3x.png" width="28" height="26.83" class="normal"/>
+				  <image xlink:href="" src="style/icon/icon7_on@3x.png" width="28" height="26.83" class="on"/>
+				</svg>
+				<span>综合</span>
+			</li>
+
+			<li class="btn btn1_hover" onclick="toThisMenu(this)" data-toggle="tooltip" data-placement="right">			
+				<svg width="32px" height="26px" viewBox="0 0 26 26" version="1.1">
+				    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <g id="导航栏" transform="translate(-989.000000, -455.000000)" fill-rule="nonzero" fill="#FFFFFF">
+				            <g id="系统配置" transform="translate(989.000000, 455.000000)">
+				                <path d="M25.2518286,4.69269707 L13.1428426,9.62500776 L1.00617926,4.69269707 L13.1148379,0.00966103579 L25.2518286,4.69269707 Z M25.9841977,6.94299437 L25.9841977,20.1137198 C18.5890103,23.5314246 14.5526816,25.3757074 13.8752117,25.6465684 L13.8752117,11.9858359 L25.9841977,6.94299437 Z M0.00854501342,6.94299437 L0.00854501342,20.1137198 C7.40373242,23.5314246 11.4400611,25.3757074 12.117531,25.6465684 L12.117531,11.9858359 L0.00854501342,6.94299437 Z" id="Shape"></path>
+				            </g>
+				        </g>
+				    </g>
+				</svg>
+				<svg width="32" height="26">
+				  <image xlink:href="" src="style/icon/icon5@3x.png" width="26" height="26" class="normal"/>
+				  <image xlink:href="" src="style/icon/icon5_on@3x.png" width="26" height="26" class="on"/>
+				</svg>
+				<span>工具</span>
+			</li>
+
+
+
+			
+
+			
+
+
+
+
+		</ul>
+	</nav>
+	
+	
+<!-- 二级菜单 -->
+	<nav class="home_nav2" id="home_nav2">
+		
+		<ul>
+			<li>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">利益冲突审查</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">新增案件</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">我的案件</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">咨询与代书</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">法院/侦查/检察</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">所有案件</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">管理案件</button>
+
+			</li>
+
+			<li>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">我的客户</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">对方当事人</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">所有客户</button>
+			</li>
+
+			<li>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">归档</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">全所档案</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">借档</button>
+			</li>
+
+			<li>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">财务统计</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">执业人员财务统计</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">收结案统计</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">用印统计</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">综合统计中心</button>
+			</li>
+
+			<li>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">案件收支</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">律所收支</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">收支明细</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">代开发票</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">开具发票</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">我的收支</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">我的收入</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">我的发票</button>
+			</li>
+
+			<li>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">通讯录</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">文件资料</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">司法计算</button>
+				<button class="btn" onclick="toThisPage('page/案件管理.html',this)">提醒事项</button>
+			</li>
+
+		</ul>
+
+	</nav>
+	
+
+
+<!-- 右侧 url 内容显示区域 -->
+	<div class="home_content">
+		<div class="btn home_nav2_switch" id="home_nav2_switch">
+			<p class="home_nav2_close">
+				<svg width="10px" height="12px" viewBox="0 0 10 12" version="1.1">
+				    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <g id="导航栏" transform="translate(-243.000000, -419.000000)" fill="#FFFFFF">
+				            <g id="Group-8-Copy" transform="translate(240.000000, 400.000000)">
+				                <polygon id="Triangle-2" transform="translate(8.000000, 25.000000) rotate(-90.000000) translate(-8.000000, -25.000000) " points="8 20 14 30 2 30"></polygon>
+				            </g>
+				        </g>
+				    </g>
+				</svg>
+			</p>
+			<img src="style/icon/nav2_switch.png" style="display: none;">
+		</div>
+		<iframe class="home_show" id="iframeBox" frameborder="no" src="page/home.html"></iframe>
+	</div>
+
+</div> <!-- view end -->
+
+
+<!-- 功能性弹窗 -->
+	<div class="new_view" id="id_new_view">
+
+		<!-- 关闭按钮 icon -->
+		<a class="btn">
+			<svg width="26px" height="26px" viewBox="0 0 20 20" version="1.1">
+			    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <g id="" transform="translate(-1117.000000, -115.000000)" fill="#FFFFFF">
+			            <g id="Group" transform="translate(1127.000000, 125.000000) rotate(45.000000) translate(-1127.000000, -125.000000) translate(1114.000000, 112.000000)">
+			                <rect id="Rectangle-8" x="0" y="12" width="26" height="2"></rect>
+			                <rect id="Rectangle-8" transform="translate(13.000000, 13.000000) rotate(90.000000) translate(-13.000000, -13.000000) " x="0" y="12" width="26" height="2"></rect>
+			            </g>
+			        </g>
+			    </g>
+			</svg>
+			<svg width="26" height="26" class="ie8_icon" style="display: none;">
+				<image xlink:href="" src="style/icon/main_close.png" width="26" height="26" />
+			</svg>
+		</a>
+
+		<iframe src="" frameborder="no"></iframe>		
+	</div>
+
+
+<!-- 修改颜色界面 -->
+	<div class="new_view2" id="ui_color">
+		<ul class="new_view2_body">
+			<li class="btn new_view2_on" onclick="mainColor('style/css/main_black.css', this)"></li>
+			<li class="btn" onclick="mainColor('style/css/main_blue.css', this)"></li>
+			<li class="btn" onclick="mainColor('style/css/main_burlywood.css', this)"></li>
+			<li class="btn" onclick="mainColor('style/css/main_green.css', this)"></li>	
+		</ul>
+
+		<!-- 关闭按钮 icon -->
+		<a class="btn">
+			<svg width="34px" height="34px" viewBox="0 0 20 20" version="1.1">
+			    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			        <g id="" transform="translate(-1117.000000, -115.000000)" fill="#FFFFFF">
+			            <g id="Group" transform="translate(1127.000000, 125.000000) rotate(45.000000) translate(-1127.000000, -125.000000) translate(1114.000000, 112.000000)">
+			                <rect id="Rectangle-8" x="0" y="12" width="26" height="2"></rect>
+			                <rect id="Rectangle-8" transform="translate(13.000000, 13.000000) rotate(90.000000) translate(-13.000000, -13.000000) " x="0" y="12" width="26" height="2"></rect>
+			            </g>
+			        </g>
+			    </g>
+			</svg>
+			<svg width="26" height="26" class="ie8_icon" style="display: none;">
+				<image xlink:href="" src="style/icon/main_close.png" width="30" height="30" />
+			</svg>
+		</a>
+	</div>
+
+
+	<!-- 非模态提示框 -->
+	<div class="not_mode_cue">
+		<div>
+			<del class="btn">
+
+				<!-- 兼容ie8 -->
+				<span>&#xd7;</span>
+			</del>
+			<h4>非模态提示框-标题</h4>
+		</div><hr>
+
+		调用方法：showCue( delay, timeLength )
+		<br>delay-显示延迟时间（单位：毫秒）
+		<br>timeLength-显示时间，不传参数不自动关闭（单位：毫秒）
+		
+	</div>
+
+
+<script type="text/javascript" src="style/js/baseFunction.js"></script>
+<script type="text/javascript" src="style/js/main.js"></script>
+<script type="text/javascript">
+	window.onkeydown = function(e){
+		var myMenu = document.getElementsByClassName('demo_1')[0];
+		switch(e.key){
+			case "q":
+			myMenu.style.display = "block";
+			break;
+			case "w":
+			myMenu.style.display = "none";
+			break;
+		}
+	}
+	showCue( 1000, 4000 )
+</script>
+</body>
+</html>

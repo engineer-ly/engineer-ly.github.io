@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>练习</title>
+</head>
+
+<style type="text/css">
+	*{
+		/*padding:0;*/
+		/*margin: 0;*/
+		box-sizing: border-box;
+		list-style: none;
+	}
+	body{
+		color: #fff;
+		background-color: #202020;
+	}
+	.box{
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		background: #fff;
+		margin-top: 10px;
+		-webkit-transition: all .3s ease-out;
+		transition: all .3s ease-out;
+		color: #515151;
+		text-align: center;
+		line-height: 100px;
+		font-size: 30px;
+		/*border: 30px solid rgba(0,0,0,0.8);*/
+	}
+	.timer{
+		width: 400px;
+		height: 400px;
+		background-color: #515151;
+		margin-top: 12px;
+		font-size: 24px;
+		font-weight: 300;
+		padding: 30px;
+	}
+	.timer input{
+		text-align: right;
+		font-size: 24px;
+		width: 80px;
+		color: red;
+	}
+	.box img{
+		margin-top: -50px;
+		margin-left: -50px;
+	}
+</style>
+ 
+<body>
+	<!-- <button onclick="n()">计算2的N次幂</button>
+	<button onclick="num()">计算N的阶乘</button>
+	<button onclick="fnum()">计算斐波那契数列的N位数</button>
+	<button onclick="lynum()">反向输出</button>
+	<button onclick="xxnum()">比大小</button>
+	<button onclick="amine()">动物叫声（函数）</button>
+	<button onclick="nizhuan()">数字反转并转换为汉字</button>
+	<button onclick="jcx()">计算N的阶乘（函数写法）</button>
+	<button onclick="capital()">金额转化为大写</button>
+	<button onclick="byteLength()">求字节长度</button> -->
+	<div class="box">
+		<img src="icon_face.png">
+	</div>
+
+
+	<!-- <div class="timer">
+		分<input type="text" value="0" class="minutes">
+		秒<input type="text" value="0" class="seconds">
+	</div> -->
+</body>
+<script type="text/javascript">
+
+
+
+
+	// 获取可是窗口宽高
+	function getViewportOffset(){
+		if(window.innerWidth){
+			return {
+				w : window.innerWidth,
+				h : window.innerHeight				
+			}
+
+		}else{
+			if(document.compatMode === "BackCompat"){
+				return {
+					w : document.body.clientWidth,
+					h : document.body.clientHeight
+				}
+			}else{
+				return {
+					w : document.documentElement.clientWidth,
+					h : document.documentElement.clientHeight
+				}
+			}
+		}
+	}
+
+	// 获取滚动条X，Y轴
+	function getScrollOffset(){
+		if(window.pageXOffset || window.pageXOffset == 0){
+			return {
+				x : window.pageXOffset,
+				y : window.pageYOffset
+			}
+		}else{
+			return {
+				x : document.body.scrollTop + document.documentElement.scorllTop,
+				y : document.body.scrollLeft + document.documentElement.scorllLeft
+			}
+		}
+	}
+
+	// 计时器
+	// var min = document.getElementsByClassName('minutes')[0];
+	// var sec = document.getElementsByClassName('seconds')[0];
+	// var timer = setInterval(function(){
+	// 	sec.value ++;
+	// 	if(sec.value == 60){
+	// 		min.value ++;
+	// 		sec.value = 0;
+	// 	}
+	// 	if(min.value == 3){
+	// 		clearInterval(timer);
+	// 	}
+	// }, 1000)
+
+	// 获取时间
+	// function nowTime(){
+	// 	var date = new Date;
+	// 	console.log(date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日' + date.getHours() + '时' + date.getMinutes() + '分' + date.getSeconds() + '秒');
+	// }
+	var allVar = {
+		now : true,
+		div : document.getElementsByTagName('div')[0]
+	}
+
+	allVar.div.onclick = function (){
+		if(allVar.now == true){
+			this.style.borderRadius = '50%';
+			this.style.background = 'linear-gradient(to left,#2BF4E7,#1AA3F7)';
+			allVar.now = false;
+		}else{
+			this.style.borderRadius = '0%';
+			this.style.background = '#fff';
+			allVar.now = true;
+		}
+	}
+
+	allVar.div.style.top = '400px';
+	allVar.div.style.left = '300px';
+	
+	document.onkeydown = function(e){
+		var num = 100;
+		switch(e.which){
+			case 38:
+			allVar.div.style.top = parseInt(allVar.div.style.top) - num + "px";
+			break;
+
+			case 40:
+			allVar.div.style.top = parseInt(allVar.div.style.top) + num + "px";
+			break;
+
+			case 37:
+			allVar.div.style.left = parseInt(allVar.div.style.left) - num + "px";
+			break;
+
+			case 39:
+			allVar.div.style.left = parseInt(allVar.div.style.left) + num + "px";
+			break;
+
+			case 32:
+			allVar.div.onclick();
+			break;
+
+		}
+	}
+
+	setInterval(function(){
+		var it = allVar.div.style;
+		var num = 300;
+
+		if(parseInt(it.top) < 100){
+
+			it.top = parseInt(it.top) + num + "px";
+
+		}else if(parseInt(it.top) > (window.innerHeight - 100)){
+
+			it.top = parseInt(it.top) - num + "px";
+
+		}else if(parseInt(it.left) > (window.innerWidth - 100)){
+
+			it.left = parseInt(it.left) - num + "px";
+
+		}else if(parseInt(it.left) < 100){
+
+			it.left = parseInt(it.left) + num + "px";
+
+		}else{
+			switch(parseInt(Math.random() * 100 % 4)){
+
+				case 0:
+				it.top = parseInt(it.top) - num + "px";
+				break;
+
+				case 1:
+				it.top = parseInt(it.top) + num + "px";
+				break;
+
+				case 2:
+				it.left = parseInt(it.left) - num + "px";
+				break;
+
+				case 3:
+				it.left = parseInt(it.left) + num + "px";
+				break;
+
+			}
+		}
+
+	}, 500)
+
+
+
+
+	function n(){
+		var n = parseInt(window.prompt('请输入'));
+		for(var i = 2;n > 1;n-- ){
+			i *= 2;
+		}
+		alert(i);
+	}
+
+	function num(){
+		var n = parseInt(window.prompt('请输入'));
+		for(var i = n - 1;i >= 1;i--){
+			n *= i;
+		}
+		alert(n);
+	}
+
+	function fnum(){
+		var y = 1,
+			z = 1;
+		var n = parseInt(window.prompt('请输入'));
+		if(n <= 2){
+			alert(y);
+		}else{
+			for(i = 2;i < n;i++){
+			x = y + z;
+			z = x;
+			y = x - y;
+			}
+			alert(x);
+		}
+		
+	}
+
+	function lynum(){
+		var i = parseInt(window.prompt('请输入'));
+		var x = i % 10;
+		var y = i % 100 - x;
+		var z = (i - (i % 100)) / 100;
+		alert((x * 100) + y + z)
+	}
+	
+	function xxnum(){
+		var a = parseInt(window.prompt('请输入'));
+		var b = parseInt(window.prompt('请输入'));
+		var c = parseInt(window.prompt('请输入'));
+		if(a > b && a > c){
+			alert(a);
+		}else if(b > a && b > c){
+			alert(b);
+		}else{
+			alert(c);
+		}
+	}
+
+	function amine(){
+		var a = window.prompt('请输入动物（猪 or 狗 or 羊）');
+		if(a == '狗'){
+			alert('旺旺旺')
+		}else if(a == '猪'){
+			alert('哼哼哼')
+		}else if(a == '羊'){
+			alert('咩咩咩')
+		}else if(a == undefined){
+			
+		}else{
+			alert('没有找到')
+		}
+	}
+
+	function scream(animal){
+		switch(animal){
+			case "dog":
+				document.write('汪汪汪');
+				return;
+			case "cat":
+				document.write('miao');
+				return;
+			case "yang":
+				document.write('mie');
+				return;
+		}
+	}
+
+	function nizhuan(){
+		var end = '';
+		var x = window.prompt('请输入数字');
+		if(isNaN(x) == false){
+			
+			for(var i = x.length - 1; i >= 0; i --){
+				end += nizhuan2(x[i]);
+			}
+
+			console.log(end);
+			alert(end);
+		}else{
+			alert('请输入数字')
+		}
+		
+	}
+
+	function nizhuan2(nizhun2){
+		switch(nizhun2){
+			case "1" :
+				return "壹";
+			case "2" :
+				return "贰";
+			case "3" :
+				return "叁";
+			case "4" :
+				return "肆";
+			case "5" :
+				return "伍";
+			case "6" :
+				return "陆";
+			case "7" :
+				return "柒";
+			case "8" :
+				return "捌";
+			case "9" :
+				return "玖";
+			case "0" :
+				return "零";
+			
+		}
+	}
+
+	function jcx(){
+		var i = window.prompt('请输入数字');
+		i = jc(i);
+		alert(i);
+	}
+	function jc(n){
+		
+		if(n == 1){
+			return 1;
+		}
+		return n * jc(n - 1);
+		
+	}
+
+	function capital(){
+		var end = '';
+		var rmb = window.prompt('请输入金额（整数）');
+		if(isNaN(rmb) == false){
+			//rmb = +rmb;
+			for(var i = 0; i < rmb.length; i ++){
+				end += rmbzh(rmb[i]);
+			}
+			console.log(end);
+			alert(end);
+
+		}else{
+			alert('请输入正确的格式（整数）')
+		}
+	}
+
+	function byteLength(){
+		var y = 0;
+		var x = window.prompt('请输入');
+		for(i = 0; i < x.length; i ++){
+			if(x.charCodeAt(i) <= 255){
+				y ++;
+			}else{
+				y += 2;
+			}
+		}
+		alert(y);
+	}
+
+	function rmbzh(rmb2){
+		switch(rmb2){
+			case "1" :
+				return "壹";
+			case "2" :
+				return "贰";
+			case "3" :
+				return "叁";
+			case "4" :
+				return "肆";
+			case "5" :
+				return "伍";
+			case "6" :
+				return "陆";
+			case "7" :
+				return "柒";
+			case "8" :
+				return "捌";
+			case "9" :
+				return "玖";
+			case "0" :
+				return "";
+			
+		}
+	}
+
+	// var box = document.getElementsByTagName('div')[0];
+	// setInterval(function(){
+	// 	var x = [Math.random(), Math.random(), Math.random()];
+	// 	// alert(x);
+	// 	for(var i = 0; i < x.length; i ++){
+	// 		x[i] = x[i] * 100;
+	// 		x[i] = parseInt(x[i]);
+	// 	}
+	// 	box.style.backgroundColor = 'rgb(' + x[0] + ',' + x[1] + ',' + x[2] + ')';
+	// },200)
+
+	// var arr = [1,2,3];
+
+	// for(var i = 0; i < arr.length; i ++){
+	// 	arr[i] = String(arr[i]);
+	// }
+
+	// function Father(){
+	// 	this.name = 'LY';
+	// 	this.age = 25;
+	// }
+	// function Mother(){
+	// 	this.height = 170;
+	// 	this.weight = 54;
+	// }
+	
+	// function Son(name, age, height, weight, home){
+	// 	Father.apply(this ,[name, age]);
+	// 	Mother.apply(this ,[height, weight]);
+	// 	this.home = null;
+	// }
+	// var son = new Son();
+	// var son1 = new Father();
+	//var start = 'wwzertyuioiuytarertyuiuytrexertyvuytrewert';
+	//var end1;
+	// function first(start, end){
+	// 	//var start = 'wwzertyuioiuytarertyuiuytrexertyvuytrewert';
+	// 	var box = {}
+	// 	for(var i = 0; i < start.length; i ++){
+	// 		if(box[start[i]] == undefined){
+	// 			box[start[i]] = 1;
+	// 		}else{
+	// 			box[start[i]] ++;
+	// 			//console.log('123');
+	// 		}	
+	// 	}
+	// 	for(var i = 0; i < start.length; i ++){
+	// 		if(box[start[i]] == 1){
+	// 			end = start[i];
+	// 			return end;
+	// 			break;
+	// 		}
+	// 	}
+	// }
+
+	// var t = (function(x){
+	// 	delete x;
+	// 	return x;
+	// }(1))
+
+	// var v = {
+	// 	a : '123',
+	// 	b : 'gaga'
+	// }
+	// delete v.a;
+	// delete v.b;
+	// function x(){
+	// 	var  a = 123;
+	// 	function a(){
+	// 		console.log('123')
+	// 	}
+	// 	console.log(a);
+	// }
+	// 数组去重
+	// var arr = [1,1,1,1,2,2,2,2,3,3,3];
+	// function box(num){
+	// 	var obj = {},
+	// 		arr2 = [],
+	// 		len = num.length;
+	// 	for(var i = 0; i < len; i ++){
+	// 		obj[num[i]] = '123';
+	// 		//console.log(obj)
+	// 	}
+	// 	for(var y in obj){
+	// 		arr2.push(Number(y))
+	// 	}
+	// 	return arr2;
+	// }
+	// var sss = [1,1,1,1]
+	// var arr = [1,1,1,1,2,2,2,2,3,3,3];
+	// Array.prototype.unique = function (){
+	// 	var obj = {},
+	// 		arr2 = [],
+	// 		len = this.length;
+	// 	for(var i = 0; i < len; i ++){
+	// 		if(!obj[this[i]]){
+	// 			obj[this[i]] = 'abc';
+	// 			arr2.push(this[i]);
+	// 		}
+	// 	}
+	// 	return arr2;
+	// }
+
+
+	// var xx = {
+	// 	name : 'ly',
+	// 	sex : 'man',
+	// 	age : 23
+	// }
+	// for(var v in xx){
+	// 	console.log(v + " " + xx[v])
+	// }
+
+	// var xx = {
+	// 	name : 'ly',
+	// 	sex : 'man',
+	// 	age : 23
+	// }
+	// var ly = {
+
+	// }
+	// for(var v in xx){
+	// 	ly[v] = xx[v]
+	// }
+	// var b = {a : '1'};
+	// function p(){
+	// 	e = '2';
+	// 	return function o(){
+	// 		q = '3';
+	// 		alert('12')
+	// 	}
+	// }
+	// p()
+
+	// var a = 5;
+	// function text(){
+	// 	a = 0;
+	// 	console.log(a);
+	// 	console.log(this.a);
+	// 	var a;
+	// 	console.log(a);
+	// }
+	// var x = new text();
+
+	// var u = {
+	// 	a : 123
+	// }
+
+	// u.wife = '123';
+
+	// var x = 12;
+	// function n(){
+	// 	this.x = 1;
+	// 	console.log(x);
+	// }
+	// var k = new n();
+	//n();
+
+	// var num = (function (n){
+	// 	if(n == 1){
+	// 		return 1;
+	// 	}
+	// 	return n * arguments.callee(n - 1);
+	// }(9))
+
+
+	// function Person( name , age ){
+	// 	this.name = name;
+	// 	this.age = age;
+	// }
+
+	// var Ly = new Person( 'LiuYong' , 23 );
+	// var Lt = new Person( 'Wahaha' , 21 );
+
+ // 	var obj = {
+ // 		//name : 'LiuYong'
+ // 	}
+ // 	var obj1 = {
+ // 		name : 'LiuYong'
+ // 	}
+
+	
+	// function a(){
+	// 	var num = 100;
+	// 	function b(){
+	// 		num ++;
+	// 		console.log(num);
+	// 	}
+	// 	return b;
+	// }
+	// var i = a();
+
+	// function Ko(){
+	// 	this.name = '123';
+	// 	this.fun = function (){
+
+	// 	}
+	// }
+	// var x = new Ko();
+
+	// function aa(){
+	// 	var num = 100;
+	// 	function b(){
+	// 		num ++;
+	// 		console.log(num);
+	// 	}
+	// 	ajax(b);
+	// }
+	// aa();
+	// function ajax(rolback){
+	// 	for (var i = 0; i < 10; i++) {
+	// 		rolback();
+	// 	}
+	// }
+
+
+
+	//i;
+
+	// var i = (function (){
+	// 	console.log('123')
+	// 	var x = 1000;
+	// 	return x;
+	// }())
+	// 壹  贰   叁     肆  伍  陆     柒   捌  玖     零
+	// 1   2   3  ,   4   5   6  ,  7   8   9      0 
+	// 亿  仟  佰      拾  万   仟    佰   拾  元
+
+	//递归
+	// function mul(n){
+	// 	if(n == 1 || n == 0){
+	// 		return 1;
+	// 	}
+	// 	return n * mul(n - 1);
+	// }
+	
+	//alert(mul(5))	
+
+
+	// var count = 0;;
+	// for(var i = 1; i < 100; i ++){
+		
+	// 	for(var j = 1; j <= i; j ++){
+			
+	// 		if(i % j == 0){
+	// 			count ++;
+	// 		}
+	// 	}
+	// 	if(count == 2){
+	// 		console.log(i + ' ');
+	// 	}
+	// 	count = 0;
+	// }
+
+	// switch(2){
+	// 	case 1:
+	// 		console.log('fffff');
+	// 		break;
+	// 	case 2:
+	// 		console.log('123');
+	// 		break;
+	// }
+
+	// var obj = {
+	// 	name : 'liuyong',
+	// 	age : 18,
+
+	// }
+	//alert(typeof(null))
+	// var a = '123abc';
+	// alert(typeof(typeof(a)));
+
+	// function fb(n){
+	// 	if(n == 1 || n == 2){
+	// 		return 1;
+	// 	}
+	// 	return fb(n - 1) + fb(n - 2);
+	// }
+
+	// function bar(){
+	// 	return foo;
+	// 	foo = 10;
+	// 	function foo(){
+	// 		//boby...
+	// 	}
+	// 	var foo = 11;
+	// }
+
+	// document.write(bar()); // function foo(){//boby...}
+
+
+	// document.write(bar()); // 11
+	// function bar(){
+	// 	foo = 10;
+	// 	function foo(){
+	// 		//boby...
+	// 	}
+	// 	var foo = 11;
+	// 	return foo;
+	// }
+
+	
+
+
+
+
+
+
+
+
+
+</script>
+</html>

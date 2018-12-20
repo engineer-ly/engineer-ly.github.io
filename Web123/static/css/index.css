@@ -1,0 +1,237 @@
+
+
+/* 主体内容 */
+
+.main-content {
+    width: 100%;
+    min-height: 900px;
+}
+
+.main-content>div {
+    padding: 0 20px;
+}
+
+.main-content .head-top {
+    width: 100%;
+    height: 400px;
+    background-image: url('../img/banner.png');
+    background-size: 90% auto;
+    background-color: #26314D;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    color: #fff;
+}
+
+.main-content .head-top .info-item-box {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.main-content .head-top .info-item-box ul {
+    max-width: 610px;
+    display: inline-block;
+}
+
+.main-content .head-top .info-item-box {
+    padding-top: 160px;
+}
+
+.main-content .head-top .info-item-box .item-list {
+    display: inline-block;
+    width: 280px;
+}
+
+.main-content .head-top .info-item-box .item-list.margin-space {
+    margin-top: 26px;
+}
+
+.main-content .head-top .item-list .detail-box {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.main-content .head-top .item-list .detail-box p {
+    font-family: PingFangSC-Regular;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: -0.21px;
+}
+
+.main-content .head-top .item-list .detail-box span {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.60);
+    letter-spacing: -0.15px;
+}
+
+.main-content .head-top .maximum-amount {
+    display: inline-block;
+    width: 242px;
+    height: 160px;
+    background: #2D3A5B;
+    vertical-align: top;
+    padding: 20px 22px;
+    font-size: 12px;
+}
+
+.main-content .head-top .maximum-amount .fir-tit {
+    color: #FFFFFF;
+    letter-spacing: -0.13px;
+}
+
+.main-content .head-top .maximum-amount .sec-tit {
+    font-size: 30px;
+    color: #FFFFFF;
+    letter-spacing: -0.32px;
+}
+
+.main-content .head-top .maximum-amount .sec-tit span {
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: -0.13px;
+}
+
+.main-content .content-title {
+    text-align: center;
+    margin-top: 56px;
+    margin-bottom: 36px;
+}
+
+.main-content .content-title .bot {
+    display: inline-block;
+    width: 70px;
+    height: 1px;
+    background: #ccc;
+    position: relative;
+}
+
+.main-content .content-title .bot span {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: -3.5px;
+    transform:rotate(45deg);
+    -ms-transform:rotate(45deg); 	
+    -moz-transform:rotate(45deg); 	
+    -webkit-transform:rotate(45deg); 
+    -o-transform:rotate(45deg); 
+}
+
+.main-content .content-title .bot.bot-left span {
+    right: -7px;
+}
+
+.main-content .content-title .bot.bot-right span {
+    left: -7px;
+}
+
+.main-content .content-title .center-title {
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    font-family: PingFangSC-Regular;
+    font-size: 20px;
+    color: #26314D;
+    letter-spacing: -0.21px;
+    margin: 0 20px;
+}
+
+.main-content .content-list {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.main-content .content-list .lending-process ul {
+    display: inline-block;
+    width: 1000px;
+}
+
+.main-content .content-list .lending-process li {
+    display: inline-block;
+    margin-left: 126px;
+    vertical-align: middle;
+}
+
+.main-content .content-list .lending-process li p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #5A5A5A;
+    letter-spacing: -0.15px;
+}
+
+.main-content .user-share {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.main-content .user-share .user-box {
+    display: inline-block;
+    width: 1000px;
+    position: relative;
+}
+
+.main-content .user-share .user-box .user-list {
+    background: #EDF2FF;
+    padding: 20px;
+    position: absolute;
+    width: 470px;
+}
+
+.main-content .user-share .user-box .head-img-box>div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.main-content .user-share .user-box .head-img-box>div img {
+    width: 50px;
+    height: 50px;
+}
+
+.main-content .user-share .user-box .head-img-box .user-name {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #26314D;
+    letter-spacing: -0.15px;
+    margin-left: 10px;
+}
+
+.main-content .user-share .user-box .head-img-box .last-time {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #D1D1D1;
+    letter-spacing: -0.13px;
+    margin-left: 10px;
+}
+
+.main-content .user-share .user-box .user-detail p {
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #7F7F7F;
+    letter-spacing: -0.15px;
+    text-align: justify;
+}
+
+.main-content .user-share .user-box .money-num {
+    display: inline-block;
+    padding: 3px 20px;
+    background-image: linear-gradient(-90deg, #174BF7 0%, #002EC6 100%);
+    border-radius: 13.5px 0 0 13.5px;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.main-content .user-share .show-more {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.main-content .about-us{
+    width: 1000px;
+    margin: 0 auto;
+    height: 600px;
+    background: #eee;
+}

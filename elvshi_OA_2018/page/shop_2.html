@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>e律师-律所办公管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<link rel="stylesheet" type="text/css" href="../style/css/bootstrap.css">
+	<link id="main_link" rel="stylesheet" type="text/css" href="../style/css/parts.css">
+	<!-- <script type="text/javascript" src="../style/js/jquery_3.js"></script> -->
+	<script src="../style/js/jquery_1.11.3.min.js"></script>
+	<script type="text/javascript" src="../style/js/bootstrap.js"></script>
+
+	<!-- 使ie9及以下兼容媒体查询和html5标签 -->
+	<!--[if lt IE 9]>
+    　 <script src="../style/js/html5shiv.min.js"></script>
+       <script src="../style/js/respond.js"></script>
+    <![endif]-->
+
+	<!-- 兼容ie8 -->
+	<!--[if lte IE 8]>
+		<link rel="stylesheet" type="text/css" href="../style/css/ie8down.css">
+	<![endif]-->
+
+</head>
+
+<body>
+	<!-- 页面加载动画 -->
+	<div class="load1" id="loading">
+		<div class="loader">Loading...</div>
+	</div>
+
+
+	<!-- 选项卡 -->
+  	<ul class="tab">
+  		<a href="shop.html">所有产品</a>
+  		<a href="shop_2.html" class="tab_on">交易记录</a>
+  	</ul>
+
+
+	<!-- 检索工具 -->
+	<form class="container-fluid page_find" action="">
+		<div class="down_box">
+			<select>
+				<option>类别筛选</option>
+				<option>系统续费</option>
+				<option>用户新增</option>
+				<option>短信购买</option>
+			</select>
+		</div><div class="down_box">
+			<select>
+				<option>支付方式筛选</option>
+				<option>Alipay</option>
+				<option>微信付款</option>
+				<option>银行卡付款</option>
+			</select>
+		</div><div class="down_box">
+			<select>
+				<option>开票筛选</option>
+				<option>已开票</option>
+				<option>未开票</option>
+			</select>
+		</div>
+	</form>
+
+
+	<!-- 列表 -->
+	<table class="table white table-hover table-fixed-head" data-table-fixed-head-trigger="0" data-table-fixed-head-top="0" id="table">
+		<!-- 表头 -->
+	    <thead id="table_title">
+		    <tr>
+		        <th>订单编号</th>
+		        <th>商品名称</th>
+		        <th>订单日期</th>
+		        <th>支付方式</th>
+		        <th>金额（元）</th>
+		        <th>备注说明</th>
+		        <th>付款状态</th>
+		        <th>付款日期</th>
+		        <th>业务处理</th>
+		        <th>发票申请</th>
+		        <th>操作</th>
+		    </tr>
+	    </thead>
+
+		<!-- 表体 -->
+	    <tbody>
+
+	    <tr>
+	        <td><a href="#">20180410090506357</a></td>
+	        <td>购买短信</td>
+	        <td>2018-04-10</td>
+	        <td>Alipay</td>
+	        <td>100.00</td>
+	        <td>购买短信100条</td>
+	        <td>已付款</td>
+	        <td>2018-04-10</td>
+	        <td>已处理</td>
+	        <td>未申请</td>
+	        <td>
+				<a href="#" class="btn_hollow">申请开票</a>
+	        </td>
+	    </tr>
+
+	    <tr>
+	        <td><a href="#">20180410090506357</a></td>
+	        <td>购买短信</td>
+	        <td>2018-04-10</td>
+	        <td>-</td>
+	        <td>100.00</td>
+	        <td>购买短信100条</td>
+	        <td>未付款</td>
+	        <td>-</td>
+	        <td>未处理</td>
+	        <td>未申请</td>
+	        <td>
+				<a href="#" class="btn_hollow">付款</a>
+				<a href="#" class="btn_hollow">删除</a>
+	        </td>
+	    </tr>
+	    
+
+	    </tbody>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="../style/js/baseFunction.js"></script>
+<script type="text/javascript" src="../style/js/parts.js"></script>
+</body>
+</html>
