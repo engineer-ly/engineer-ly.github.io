@@ -1,0 +1,22 @@
+.home-hero{
+  top: -26px;
+}
+.about-hero{
+  top: -26px;
+}
+.menu > .language{
+  background-color: #3a3a3a;
+  padding-left: 6px;
+}
+.nav_solid{
+  background-color: #fff;
+}
+.menu .hover_menu{
+  margin-top: 0;
+}
+.language_interface{
+  background-color: #fff;
+}
+.product > li > img{
+	width: 34%;
+}
