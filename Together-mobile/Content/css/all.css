@@ -1081,13 +1081,12 @@ footer.two-btn > *:last-child{
   height: 34px;
   padding: 0 80px 0 6px;
   transition: all 0.2s ease-out;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: rgba(0,0,0,0.05);
   border-radius: 4px;
   box-shadow: none;
 }
 .x-talk_input > .text:focus{
-  border-color: #2977EA;
+  background-color: rgba(0,0,0,0.1);
 }
 .x-talk_input > .x-sbtn{
   position: absolute;
