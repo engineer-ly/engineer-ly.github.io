@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+	div{
+		display: inline-block;
+		padding: 40px;
+		background-color: orange;
+	}
+	h1{
+		font-size: 20px;
+		margin-top: 40px;
+		margin-bottom: 10px;
+	}
+</style>
+<body>
+	
+	<button id='btn'>获取php数据</button>
+
+	<h1>提交至PHP get</h1>
+	<form action="data.php" method="GET">
+		<input type="text" name="name">
+		<input type="submit" value="提交">
+	</form>
+	
+
+
+	<h1>Ajax请求数据 get</h1>
+
+	<form id="getForm">
+		<input type="text" name="name">
+		<input type="submit" value="提交">
+	</form>
+	
+
+	<h1>提交至PHP post</h1>
+	<form action="data.php" method="post">
+		<input type="text" name="name">
+		<input type="submit" value="提交">
+	</form>
+	
+
+
+	<h1>Ajax请求数据 post</h1>
+
+	<form id="postForm">
+		<input type="text" name="name">
+		<input type="submit" value="提交">
+	</form>
+
+
+
+	
+
+	<script type="text/javascript">
+
+		// 获取PHP数据
+		document.getElementById("btn").addEventListener("click", getData);
+
+		function getData(){
+
+			var xhr = new XMLHttpRequest();
+
+			xhr.open("GET", "data.php?name=Young1", true);
+
+			xhr.onload = function(){
+				console.log(this.responseText);
+			}
+			xhr.send();
+		}
+
+
+
+		// 提交表单并获取PHP数据 GET
+		var get = document.getElementById("getForm");
+		get.addEventListener("submit", getForm);
+
+		function getForm(e){
+			e.preventDefault();
+			var name = get.getElementsByTagName("input")[0].value;
+
+			var xhr = new XMLHttpRequest();
+
+			xhr.open("GET", "data.php?name=" + name, true);
+
+			xhr.onload = function(){
+				console.log(this.responseText);
+			}
+			xhr.send();
+		}
+
+
+
+		// 提交表单并获取PHP数据 POST
+		var post = document.getElementById("postForm");
+		post.addEventListener("submit", postForm);
+
+		function postForm(e){
+			e.preventDefault();
+			var name = post.getElementsByTagName("input")[0].value;
+			var params = "name="+name;
+			var xhr = new XMLHttpRequest();
+
+			xhr.open("POST", "data.php", true);
+
+			// 设置请求头
+			xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+			xhr.onload = function(){
+				console.log(this.responseText);
+			}
+			xhr.send(params);
+		}
+		
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

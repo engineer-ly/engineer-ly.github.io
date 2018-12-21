@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iFrame_父级</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery_1.1.min.js"></script>
+</head>
+<style type="text/css">
+	body{
+		text-align: center;
+	}
+	iframe{
+		width: 80%;
+		height: 400px;
+
+	}
+	
+</style>
+
+<body>
+	<h1 id="title">这是标题1</h1>
+	<p>这是正文1</p>
+	<iframe id="demo" src="iframe_child.html"></iframe>
+
+<script type="text/javascript">
+	// var x = document.getElementById("demo").contentWindow.document;
+	// console.log(x);
+	var num = 100;
+	function ka(){
+		$("body").css("background", "#000");
+	}
+	function pa(){
+		$("body").css("background", "red");
+	}
+
+	function aa(){
+
+	}
+	if(typeof(aa) != "undefined"){
+		console.log(1);
+	}
+</script>
+</body>
+</html>

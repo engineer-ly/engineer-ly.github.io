@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iFrame_子级</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery_1.1.min.js"></script>
+</head>
+<style type="text/css">
+	body{
+		text-align: center;
+		background-color: #3a3a3a;
+		color:#fff;
+	}
+
+
+	
+</style>
+<body>
+	<h1 id="title2">这是标题2</h1>
+	<p>这是正文2</p>
+
+<script type="text/javascript">
+	$(function(){
+		// console.log(parent.num);
+		console.log($("#title", window.parent.document).text());
+		// parent.ka();
+	})
+</script>
+</body>
+</html>

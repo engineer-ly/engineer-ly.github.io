@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+	div{
+		display: inline-block;
+		padding: 40px;
+		background-color: orange;
+	}
+</style>
+<body>
+	<div class="box">...</div>
+	<button id='btn'>填入文本</button>
+
+	
+
+	<script type="text/javascript">
+
+		document.getElementById('btn').addEventListener('click',loadText);
+
+		function loadText(){
+			// console.log('1');
+
+			var xhr = new XMLHttpRequest();
+
+			// console.log(xhr);
+			xhr.open('GET', 'text.txt', true);
+				// console.log(xhr.readyState);
+
+			// xhr.onprogress = function(){
+			// 	console.log(xhr.readyState)
+			// }
+
+			xhr.onload = function(){
+
+
+				document.getElementsByClassName('box')[0].innerText = this.responseText;
+				// console.log(xhr.status);
+				// console.log(this.readyState);
+				// if(this.status == 200 && this.readyState == 4){
+				// 	document.getElementsByClassName('box')[0].innerText = txt;
+				// }else if(this.status == 404){
+				// 	console.log('请求的网页不存在');
+				// }else if(this.status == 503){
+				// 	console.log('服务器繁忙')
+				// }
+
+			}
+			xhr.send();
+			
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

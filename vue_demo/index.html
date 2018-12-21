@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue.js 学习Demo</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+	<div id="vue_shell">
+		<h1>Events</h1>
+		<button v-on:click="plus( 1 )">加一岁</button>
+		<button @click="reduce( 1 )">减一岁</button>
+		<button v-on:dblclick="plus( 10 )">加十岁</button>
+		<button @dblclick="reduce( 10 )">减十岁</button>
+		<p>My age is {{age}}</p>
+
+		<div id="canvas" v-on:mousemove="updateXY">
+			{{ x }}, {{ y }}
+		</div>
+
+
+
+
+
+
+	<br>
+	<button onclick="myFunction(event)">测试 Event</button>
+
+
+
+
+
+	</div>
+
+	<script type="text/javascript" src="app.js"></script>
+
+	<script type="text/javascript">
+		function myFunction(event){
+			console.log(event)
+		}
+	</script>
+
+</body>
+</html>

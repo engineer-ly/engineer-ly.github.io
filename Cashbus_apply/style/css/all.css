@@ -1,0 +1,444 @@
+html{
+  background-color: #fff;
+}
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+
+  /*禁止用户长按复制*/
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+ul, li{
+  list-style: none;
+}
+img{
+  width: 100%;
+}
+
+body,textarea,input,select,a{
+  font-size: 16px;
+  color: #333;
+  font-family: 'Helvetica', 'Lato', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  outline: none;
+}
+
+a{
+  text-decoration: none;
+}
+input,li,a{
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+input{
+  -webkit-user-select: auto;
+}
+
+
+body{
+  padding-top: 44px;
+}
+
+
+
+
+.path1 > .title{
+  background-image: url(../img/bg_01.png);
+}
+
+.path2 > .title{
+  background-image: url(../img/bg_02.png);
+}
+
+.path3 > .title{
+  background-image: url(../img/bg_03.png);
+}
+
+.path4 > .title{
+  padding-top: 20px;
+  background-image: url(../img/bg_04.png);
+}
+.path4 > .title > p{
+  font-size: 13px;
+  line-height: 22px;
+}
+.path4 > .title > p > em{
+  font-style: normal;
+  font-size: 17px;
+}
+
+
+.header{
+  width: 100%;
+  position: fixed;
+  height: 44px;
+  top: 0;
+  background-color: #fff;
+  z-index: 900;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+.header > li{
+  float: left;
+  width: 25%;
+  text-align: center;
+  height: 100%;
+  line-height: 44px;
+  padding: 0 16px;
+}
+
+.header > i{
+  width: 25%;
+  height: 2px;
+  display: block;
+  margin-top: 42px;
+  padding: 0 12px;
+  transition: all .2s ease-out;
+}
+.header > i > i{
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(to right,#FE492C,#FF8533);
+}
+
+.now1 > li:nth-child(1) > a{
+  background: linear-gradient(to right,#FE492C,#FF8533);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.now1 > i{
+  margin-left: 0%;
+}
+
+.now2 > li:nth-child(2) > a{
+  background: linear-gradient(to right,#FE492C,#FF8533);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.now2 > i{
+  margin-left: 25%;
+}
+
+.now3 > li:nth-child(3) > a{
+  background: linear-gradient(to right,#FE492C,#FF8533);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.now3 > i{
+  margin-left: 50%;
+}
+
+.now4 > li:nth-child(4) > a{
+  background: linear-gradient(to right,#FE492C,#FF8533);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.now4 > i{
+  margin-left: 75%;
+}
+
+
+
+.title{
+  width: 100%;
+  height: 110px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+.title > img{
+  width: auto;
+  height: 44px;
+  margin-top: 20px;
+}
+.title > p{
+  font-size: 15px;
+  color: #fff;
+  margin-top: 4px;
+}
+
+.apply_input > li{
+  margin-bottom: 10px;
+}
+.apply_input p{
+  margin: 0 15px;
+  height: 44px;
+  line-height: 44px;
+  /*border-bottom: 1px solid #E5E5E5;*/
+}
+
+.apply_input > li > .error{
+  display: block;
+  margin: 0 15px;
+  background-color: #ededed;
+  color: #F83835;
+  border-radius: 9px;
+  margin-top: 6px;
+  padding: 6px;
+  font-size: 14px;
+  padding-left: 30px;
+  position: relative;
+}
+.apply_input > li > .error:before{
+  content: '';
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  margin-top: -7px;
+  background-image: url(../img/icon_error.png);
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}
+
+
+input{
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+input[type='text'],
+input[type='password']{
+  width: calc(100vw - 30px);
+  margin: 0 15px;
+  height: 44px;
+  line-height: 44px;
+  text-align: left;
+  border-bottom: 1px solid #E5E5E5;
+  font-size: 15px;
+  border-radius: 0;
+  /*background-color: #ededed;*/
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='date']:focus,
+select:focus{
+  border-bottom: 1px solid #FF8533 !important;
+}
+
+input[type='submit']{
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  width: calc(100vw - 30px);
+  margin: 20px 15px;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 4px;
+  font-size: 18px;
+  background: linear-gradient(to right,#FE492C,#FF8533);
+  color: #fff;
+}
+input[type='submit']:disabled{
+  background: #CCCCCC;
+  opacity: 1;
+}
+
+input[type='date']{
+  width: calc(100vw - 30px);
+  margin: 0 15px;
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #E5E5E5;
+  background-color: #fff;
+  background-image: url(../img/icon_rightarrow.png);
+  background-repeat:no-repeat; 
+  background-size:7px auto;
+  background-position: right center;
+  border-radius: 0;
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+}
+input[type='date']:before{
+  content: '请选择您的出生日期';
+  color: #CCCCCC;
+  font-size: 15px;
+}
+input[type='date']:disabled:before{
+  display: none;
+}
+.input_date_none_text:before{
+  display: none;
+}
+
+input[type='text']:disabled,
+input[type='password']:disabled,
+input[type='date']:disabled,
+select:disabled{
+  background-color: #fff;
+  opacity: 0.8;
+  border-bottom: none;
+  background-image: none;
+}
+
+.file_shell{
+  width: calc(100vw - 30px);
+  margin: 0 15px;
+  height: 240px;
+  border-radius: 4px;
+  border: 1px solid #E5E5E5;
+  background-image: url(../img/icon_pick.png);
+  background-repeat:no-repeat; 
+  background-size:auto 80%;
+  background-position: center;
+  margin: 10px 15px;
+  position: relative;
+}
+.file_shell > p{
+  line-height: 20px;
+  text-align: center;
+  margin-top: 142px;
+  font-size: 15px;
+  height: auto;
+}
+.file_has_img{
+  position: relative;
+  background-size:auto 100%;
+}
+.file_has_img > p{
+  position: absolute;
+  padding: 6px 12px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 90px;
+  top: 15px;
+  margin-top: 0;
+  padding-left: 24px;
+}
+.file_has_img > p:before{
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+.file_shell > .text1{
+  display: block;
+}
+.file_shell > .text2{
+  display: none;
+}
+.file_has_img > .text1{
+  display: none;
+}
+.file_has_img > .text2{
+  display: block;
+}
+
+
+input[type='file']{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  outline: none;
+  background-color: transparent;
+  filter:alpha(opacity=0);
+  -moz-opacity:0;
+  -khtml-opacity: 0;
+  opacity: 0;
+}
+input::-webkit-input-placeholder {
+  color: #CCCCCC;
+}
+
+input[type='checkbox']{
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  background-image: url(../img/icon_checkbox_on.png);
+  background-repeat:no-repeat; 
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+  margin-top: 1px;
+}
+input[type='checkbox']:checked{
+  background-image: url(../img/icon_checkbox_off.png);
+}
+
+
+select{
+  width: calc(100vw - 30px);
+  margin: 0 15px;
+  background-color: transparent;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 0px;
+  border-bottom: 1px solid #E5E5E5;
+  font-size: 15px;
+  background-image: url(../img/icon_rightarrow.png);
+  background-repeat:no-repeat; 
+  background-size:7px auto;
+  background-position: right center;
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+}
+.select_has_tips{
+  color: #CCCCCC;
+}
+.line_light{
+  border-bottom: 1px solid #f5f5f5;
+}
+
+
+
+.apply_input .line{
+  width: 100%;
+  height: 10px;
+  background-color: #F5F5F5;
+  display: block;
+}
+
+
+
+form > .tips{
+  background-color: #F5F5F5;
+  padding: 12px 15px;
+}
+form > .tips > li{
+  margin-bottom: 10px;
+  /*border: 1px solid blue;*/
+}
+form > .tips > li:last-child{
+  margin-bottom: 0;
+}
+form > .tips > li > img{
+  width: 12px;
+  float: left;
+  margin-top: 2px;
+  /*display: none;*/
+}
+form > .tips > li > input[type='checkbox']{
+  float: left;
+}
+form > .tips > li > p{
+  font-size: 12px;
+  color: #999999;
+  padding-left: 26px;
+}
+
+
+
+
+
+
+

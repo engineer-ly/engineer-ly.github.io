@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+	div{
+		display: inline-block;
+		padding: 10px;
+		padding-right: 30px;
+		background-color: orange;
+	}
+</style>
+<body>
+	
+	<button id='btn1'>请求单个json</button>
+	<button id='btn2'>请求多个json</button>
+
+	<h1>单个json</h1>
+	<div class="user">...</div>
+
+	<h1>多个json</h1>
+	<div class="users">...</div>
+
+
+	<script type="text/javascript">
+
+
+
+		document.getElementById("btn1").addEventListener('click', loaduser);
+		
+
+		function loaduser(){
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "user.json", true);
+			xhr.onload = function(){
+				if(this.status == 200){
+					// console.log(this.responseText);
+					var user = JSON.parse(this.responseText);
+					var output = '';
+					output +=
+						'<ul>'+
+							'<li>'+user.id+'</li>'+
+							'<li>'+user.name+'</li>'+
+							'<li>'+user.email+'</li>'+
+						'</ul>';
+					
+					document.getElementsByClassName("user")[0].innerHTML = output;
+				};
+				
+			};
+
+			xhr.send();
+		};
+
+		document.getElementById("btn2").addEventListener('click', loadusers);
+
+		function loadusers(){
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "users.json", true);
+			xhr.onload = function(){
+				if(this.status == 200){
+					// console.log(this.responseText);
+					var users = JSON.parse(this.responseText);
+
+					var output = '';
+					for(var i = 0; i < users.length; i ++){
+
+						output +=
+							'<ul>'+
+								'<li>'+users[i].id+'</li>'+
+								'<li>'+users[i].name+'</li>'+
+								'<li>'+users[i].code+'</li>'+
+							'</ul>';
+						
+					}
+					// for(var i in users){
+
+					// 	output +=
+					// 		`<ul>
+					// 			<li>${users[i].id}</li>
+					// 			<li>${users[i].name}</li>
+					// 			<li>${users[i].code}</li>
+					// 		</ul>`;
+						
+					// }
+					document.getElementsByClassName("users")[0].innerHTML = output;
+				};
+				
+			};
+
+			xhr.send();
+		};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

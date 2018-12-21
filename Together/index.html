@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>e律师-协同</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <link rel="icon" href="Content/icon/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="Content/css/normalize.css">
+    <link rel="stylesheet" href="Content/css/all.css">
+    <script src='Content/Js/jquery-1.8.3.min.js'></script>
+    <script src='Content/Js/main.js'></script>
+</head>
+<body>
+    
+    <section id="main">
+
+        <ul class="nav">
+            <li class="nav_home now" onclick="switchTab( 'Page/home.html', this)" class="">首页</li>
+            <li class="nav_item" onclick="switchTab( 'Page/item.html', this)">任务大厅</li>
+            <li class="nav_lawyer" onclick="switchTab( 'Page/lawyer.html', this)">平台律师</li>
+            <li class="nav_news" onclick="switchTab( 'Page/news.html', this)">
+                我的消息<span class="num">8</span>
+            </li>
+            <li class="nav_my" onclick="switchTab( 'Page/my.html', this)">个人中心</li>
+            <li class="nav_newitem" onclick="switchTab( 'Page/newitem.html', false )">发布任务</li>
+        </ul>
+
+        <iframe id="conetent" src="Page/home.html"></iframe>
+
+    </section>
+
+</body>
+</html>

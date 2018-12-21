@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>error</title>
+	<meta charset="utf-8">
+</head>
+<style type="text/css">
+	body{
+		margin: 0;
+		padding: 0;
+		min-width: 880px;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Chrome/Safari/Opera */
+		-khtml-user-select: none; /* Konqueror */
+		-moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+		user-select: none; /* Non-prefixed version, currently
+		not supported by any browser */
+		text-align: center;
+	}
+
+	.error{
+		display: inline-block;
+		margin-top: 200px;
+		/*border: 1px solid blue;*/
+	}
+	.error > img{
+		width: initial;
+		height: initial;
+		vertical-align: top;
+	}
+
+	.error > .text{
+		display: inline-block;
+		margin-left: 50px;
+		width: 300px;
+		text-align: left;
+	}
+	.error > .text > h1{
+		font-size: 80px;
+		color: #3a3a3a;
+		font-weight: normal;
+		margin:0;
+		line-height: 1;
+		margin-bottom: 20px;
+		letter-spacing: 4px;
+		margin-left: -2px;
+	}
+	.error > .text > p{
+		font-size: 14px;
+		color: #3a3a3a;
+		margin:0;
+		line-height: 1.5;
+		margin-bottom: 10px;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
+	.error > .text > span{
+		font-size: 12px;
+		color: #999;
+		margin:0;
+		line-height: 1.5;
+		display: block;
+		margin-bottom: 30px;
+		letter-spacing: 1px;
+	}
+	.error > .text > .btn{
+		line-height: 34px;
+		display: inline-block;
+		padding: 0 16px;
+		border-radius: 34px;
+		color: #fff;
+		font-size: 14px;
+		cursor: pointer;
+		background-color: #3a3a3a;
+		transition: all 0.2s ease-out;
+		margin-right: 10px;
+		text-decoration: none;
+	}
+	.error > .text > .btn:hover{
+		background-color: #4e4e4e;
+	}
+	.error > .text > .btn2{
+		line-height: 32px;
+		display: inline-block;
+		border: 1px solid #ddd;
+		padding: 0 16px;
+		border-radius: 34px;
+		color: #3a3a3a;
+		font-size: 14px;
+		cursor: pointer;
+		transition: all 0.2s ease-out;
+		font-style: none;
+		text-decoration: none;
+	}
+	.error > .text > .btn2:hover{
+		background-color: #ededed;
+	}
+</style>
+<body>
+	<div class="error">
+		<img src="img_error_coffee.png">
+		<div class="text">
+			<h1>error</h1>
+			<p>页面错误，请尝试刷新！</p>
+			<span>
+				1.The page you are looking for not availble!<br>
+				2.The page you are looking for not availble!<br>
+				3.The page you are looking for not availble!<br>
+				4.The page you are looking for not availble!
+			</span>
+			<a href="123" class="btn">联系客服</a>
+			<a href="./" class="btn2">返回首页</a>
+		</div>
+	</div>	
+</body>
+</html>
