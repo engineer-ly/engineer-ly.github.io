@@ -912,7 +912,7 @@ footer.two-btn > *:last-child{
 }
 .x-lawyerInfo > .text > .center > .place{
   white-space: normal;
-  overflow: scroll;
+  overflow: auto;
 }
 .x-lawyerInfo > .other{
   padding: 14px 0;
@@ -1157,7 +1157,9 @@ footer.two-btn > *:last-child{
   display: none;
   position: fixed;
   top: 40px;
-  right: 16px;
+  right: 0;
+  width: 70%;
+  margin: 0 16px;
   z-index: 90;
   border: 0.5px solid #ededed;
   background-color: #fff;
@@ -1167,7 +1169,7 @@ footer.two-btn > *:last-child{
 .s-menu > .rl,
 .s-menu > .rm{
   display: block;
-  padding: 12px 40px 12px 20px;
+  padding: 14px 40px 14px 20px;
   text-align: left;
 }
 .s-menu > .rm{
