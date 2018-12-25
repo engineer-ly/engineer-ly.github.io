@@ -1158,7 +1158,7 @@ footer.two-btn > *:last-child{
   position: fixed;
   top: 40px;
   right: 0;
-  width: 70%;
+  width: 60%;
   margin: 0 16px;
   z-index: 90;
   border: 0.5px solid #ededed;
@@ -1166,8 +1166,8 @@ footer.two-btn > *:last-child{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
   border-radius: 4px;
 }
-.s-menu > .rl,
-.s-menu > .rm{
+.s-menu > a,
+.s-menu > li{
   display: block;
   padding: 14px 40px 14px 20px;
   text-align: left;
@@ -1175,8 +1175,8 @@ footer.two-btn > *:last-child{
 .s-menu > .rm{
   color: #FF6464;
 }
-.s-menu > .rl:hover,
-.s-menu > .rm:hover{
+.s-menu > a:hover,
+.s-menu > li:hover{
   background-color: #ededed;
 }
 
