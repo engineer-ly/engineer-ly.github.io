@@ -3,7 +3,7 @@
 <head>
 	<title>iFrame_子级</title>
 	<meta charset="utf-8">
-	<script type="text/javascript" src="jquery_1.1.min.js"></script>
+	<!-- <script type="text/javascript" src="jquery-1.8.3.min.js"></script> -->
 </head>
 <style type="text/css">
 	body{
@@ -16,15 +16,16 @@
 	
 </style>
 <body>
-	<h1 id="title2">这是标题2</h1>
-	<p>这是正文2</p>
+	<h1 id="title2">描述</h1>
+	<p>file://也存在跨域问题，所以该案例需要在服务器环境下测试</p>
 
 <script type="text/javascript">
-	$(function(){
-		// console.log(parent.num);
-		console.log($("#title", window.parent.document).text());
-		// parent.ka();
-	})
+
+	parent.ka();
+	function ha(){
+		document.getElementsByTagName("body")[0].style.background = "red";
+	}
+	console.log(parent.num);
 </script>
 </body>
 </html>

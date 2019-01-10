@@ -3,7 +3,7 @@
 <head>
 	<title>iFrame_父级</title>
 	<meta charset="utf-8">
-	<script type="text/javascript" src="jquery_1.1.min.js"></script>
+	<!-- <script type="text/javascript" src="jquery-1.8.3.min.js"></script> -->
 </head>
 <style type="text/css">
 	body{
@@ -23,22 +23,26 @@
 	<iframe id="demo" src="iframe_child.html"></iframe>
 
 <script type="text/javascript">
-	// var x = document.getElementById("demo").contentWindow.document;
-	// console.log(x);
+	setTimeout(function(){
+		var x = document.getElementById("demo").contentWindow.document;
+		console.log(x);
+	},200)
+	
 	var num = 100;
 	function ka(){
-		$("body").css("background", "#000");
-	}
-	function pa(){
-		$("body").css("background", "red");
+		document.getElementsByTagName("body")[0].style.background = "blue";
 	}
 
-	function aa(){
+	// function pa(){
+	// 	$("body").css("background", "red");
+	// }
 
-	}
-	if(typeof(aa) != "undefined"){
-		console.log(1);
-	}
+	// function aa(){
+
+	// }
+	// if(typeof(aa) != "undefined"){
+	// 	console.log(1);
+	// }
 </script>
 </body>
 </html>

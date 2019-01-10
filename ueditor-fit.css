@@ -1,0 +1,9 @@
+.ueditor-fit p{
+	margin: 0 !important;
+	padding: 0 !important;
+	line-height: 1.6 !important;
+}
+.ueditor-fit img{
+	max-width: 100% !important;
+	height: auto !important;
+}
