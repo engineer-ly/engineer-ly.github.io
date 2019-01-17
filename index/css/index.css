@@ -1,7 +1,6 @@
 #page{
 	background-color: #2d2e3c;
-	-webkit-transition: all 4s ease-out;
-	transition: all 4s ease-out;
+	/*transition: all 4s ease-out;*/
 }
 *{
 	padding: 0;
