@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="page">
+<html id="page" style="transition:all 0 ease 0;">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -126,7 +126,13 @@
 		
 	})
 	
-	
+	var page = document.getElementById("page");
+function randomNum(){
+	return parseInt(Math.random() * 10) + '';
+}
+setInterval(function(){
+	page.style.backgroundColor = "#" + randomNum() + randomNum() + randomNum() + randomNum() + randomNum() + randomNum();
+},40)
 	
 </script>
 
