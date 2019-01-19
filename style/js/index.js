@@ -2,7 +2,7 @@
 function toScroll(num) {
 	$("html, body").animate({
 		scrollTop: num
-	}, 200)
+	}, 300)
 	return false
 }
 
@@ -16,10 +16,13 @@ var pakeRoll = {
 	},
 	on: function(it){
 		$("header > .wrap > .menu > li").removeClass("on");
-		$(it).addClass("on");
+		if(typeof(it) == "object"){
+			$(it).addClass("on");
+			pakeRoll.list( $(it).index() );
+		}else{
+			$("header > .wrap > .menu > li:eq(" + it + ")").addClass("on");
+		}
 		pakeRoll.menu();
-		pakeRoll.list( $(it).index() )
-		console.log($(it).index())
 	},
 	list: function(num){
 		toScroll( $(".web-list > li:eq(" + num + ")").offset().top - 100 )
@@ -29,11 +32,37 @@ var pakeRoll = {
 
 
 $(function(){
-	pakeRoll.menu()
+	pakeRoll.menu();
 	
-
+	var arr = new Array();
 	$(".web-list > li").each(function(){
-		// console.log($(this).offset().top)
+		arr.push($(this).offset().top - 100);
+	})
+	var windowTimer;
+	
+	$(window).scroll(function(){
+		clearTimeout(windowTimer);
+		windowTimer = setTimeout(function(){
+			var num = $(window).scrollTop();
+			var x = 0;
+			for (var i = 0; i <= arr.length; i++) {
+				if(num >= arr[i]){
+					x = i;
+				}
+			}
+			pakeRoll.on(x);
+		}, 100)
 	})
 	
+	
+
+
+
+
+
+
+
+
+
+
 })
