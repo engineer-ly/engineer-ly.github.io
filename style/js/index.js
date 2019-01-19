@@ -32,37 +32,87 @@ var pakeRoll = {
 
 
 $(function(){
-	pakeRoll.menu();
+
+	function randomNum(){
+		return parseInt(Math.random() * 255);
+	}
+	function randomColor(){
+		return "rgba("+ randomNum() +","+ randomNum() +","+ randomNum() +",0.8)";
+	}
 	
-	var arr = new Array();
-	$(".web-list > li").each(function(){
-		arr.push($(this).offset().top - 100);
-	})
-	var windowTimer;
-	
-	$(window).scroll(function(){
-		clearTimeout(windowTimer);
-		windowTimer = setTimeout(function(){
-			var num = $(window).scrollTop();
-			var x = 0;
-			for (var i = 0; i <= arr.length; i++) {
-				if(num >= arr[i]){
-					x = i;
+	// $(".cube > div").each(function(){
+	// 	$(this).css("background-color",randomColor());
+	// })
+	$(".cube > div").css("background-color",randomColor());
+
+
+	// 数据拉取
+	function getData(){
+		var xhr = new XMLHttpRequest();
+		xhr.open("post", "/style/data/web-list.json", true);
+		xhr.onload = function(){
+			if(this.status == 200){
+				// console.log(this.responseText);
+				var data = JSON.parse(this.responseText);
+				var output1 = '';
+				var output2 = '';
+				// console.log(data)
+				for (var i = 0; i < data.length; i ++) {
+					output1 += "<li onclick='pakeRoll.on(this)'>"+ data[i].title +"</li>";
+					output2 += 
+					"<li><div class='title'>"+ data[i].title +"</div>"+
+					"<div class='s-list'>";
+					for(var x = 0; x < data[i].content.length; x ++){
+						var get = data[i].content[x];
+						output2 +=
+						"<a href="+ get.link +" target='_blank'>"+
+							"<img src="+ get.logo +">"+
+							"<p>"+ get.name +"</p>"+
+							"<span>"+ get.info +"</span>"+
+						"</a>";
+					}
+					output2 += "</div></li>";
 				}
-			}
-			pakeRoll.on(x);
-		}, 100)
-	})
+				$("header > .wrap > .menu").prepend(output1);
+				$(".web-list").html(output2);
+					
+				pageLoad();
+			};
+			
+		};
+		xhr.send();
+
+	}
+	getData();
+
+
+	function pageLoad(){
+		$("header > .wrap > .menu > li:eq(0)").addClass("on");
+		pakeRoll.menu();
+
+		var arr = new Array();
+		$(".web-list > li").each(function(){
+			arr.push($(this).offset().top - 100);
+		})
+		var windowTimer;
+
+		$(window).scroll(function(){
+			clearTimeout(windowTimer);
+			windowTimer = setTimeout(function(){
+				var num = $(window).scrollTop();
+				var x = 0;
+				for (var i = 0; i <= arr.length; i++) {
+					if(num >= arr[i]){
+						x = i;
+					}
+				}
+				pakeRoll.on(x);
+			}, 100)
+		})
+	}
+
+
 	
-	
-
-
-
-
-
-
-
-
 
 
 })

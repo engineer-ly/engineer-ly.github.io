@@ -41,7 +41,7 @@ header > .wrap > .menu::after{
 	position: absolute;
 	bottom: 12px;
 	left: 0;
-	width: 100%;
+	width: calc(100% - 20px);
 	height: 3px;
 	display: inline-block;
 	background-color: rgba(0,0,0,0.2);
@@ -101,6 +101,7 @@ header > .wrap > .right:hover{
 	line-height: 10px;
 	padding-left: 10px;
 	margin: 40px 0 20px 0;
+	font-weight: normal;
 }
 .web-list > li > .s-list{
 	font-size: 0;
@@ -163,7 +164,7 @@ div.cube{
     line-height: 20px;                                         /*行高设置，这样文本就在比box中是上下居中*/
     transform-style: preserve-3d ;                              /*开启这个，表示所有元素在3D平面呈现*/
     transform: rotateX(-50deg) rotateY(-50deg) rotateZ(0deg);   /*一开始的角度，视觉上看一下*/
-    animation: move 48s infinite linear;                         /*启动动画的名字、时长、无限循环、匀速播放*/
+    animation: move 40s infinite linear;                         /*启动动画的名字、时长、无限循环、匀速播放*/
 }
 
 /*大的正方体的设置*/
