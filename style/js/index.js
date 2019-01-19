@@ -48,40 +48,29 @@ $(function(){
 
 	// 数据拉取
 	function getData(){
-		var xhr = new XMLHttpRequest();
-		xhr.open("post", "/style/data/web-list.json", true);
-		xhr.onload = function(){
-			if(this.status == 200){
-				// console.log(this.responseText);
-				var data = JSON.parse(this.responseText);
-				var output1 = '';
-				var output2 = '';
-				// console.log(data)
-				for (var i = 0; i < data.length; i ++) {
-					output1 += "<li onclick='pakeRoll.on(this)'>"+ data[i].title +"</li>";
-					output2 += 
-					"<li><div class='title'>"+ data[i].title +"</div>"+
-					"<div class='s-list'>";
-					for(var x = 0; x < data[i].content.length; x ++){
-						var get = data[i].content[x];
-						output2 +=
-						"<a href="+ get.link +" target='_blank'>"+
-							"<img src="+ get.logo +">"+
-							"<p>"+ get.name +"</p>"+
-							"<span>"+ get.info +"</span>"+
-						"</a>";
-					}
-					output2 += "</div></li>";
-				}
-				$("header > .wrap > .menu").prepend(output1);
-				$(".web-list").html(output2);
-					
-				pageLoad();
-			};
+		var output1 = '';
+		var output2 = '';
+		// console.log(data)
+		for (var i = 0; i < data.length; i ++) {
+			output1 += "<li onclick='pakeRoll.on(this)'>"+ data[i].title +"</li>";
+			output2 += 
+			"<li><div class='title'>"+ data[i].title +"</div>"+
+			"<div class='s-list'>";
+			for(var x = 0; x < data[i].content.length; x ++){
+				var get = data[i].content[x];
+				output2 +=
+				"<a href="+ get.link +" target='_blank'>"+
+					"<img src="+ get.logo +">"+
+					"<p>"+ get.name +"</p>"+
+					"<span>"+ get.info +"</span>"+
+				"</a>";
+			}
+			output2 += "</div></li>";
+		}
+		$("header > .wrap > .menu").prepend(output1);
+		$(".web-list").html(output2);
 			
-		};
-		xhr.send();
-
+		pageLoad();
 	}
 	getData();
 
