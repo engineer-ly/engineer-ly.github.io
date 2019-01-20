@@ -61,7 +61,14 @@ $(function(){
 				output2 +=
 				"<a href="+ get.link +" target='_blank'>"+
 					"<img src="+ get.logo +">"+
-					"<p>"+ get.name +"</p>"+
+					"<p>"+ get.name +"</p>";
+				if(data[i].content[x].label){
+					for(var y = 0; y < data[i].content[x].label.length; y ++){
+						output2 += "<em>"+ data[i].content[x].label[y] +"</em>";
+					}
+				}
+				
+				output2 +=
 					"<span>"+ get.info +"</span>"+
 				"</a>";
 			}
