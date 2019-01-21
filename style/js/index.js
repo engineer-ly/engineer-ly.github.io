@@ -49,7 +49,7 @@ $(function(){
 	// 数据拉取
 	function getData(){
 		var xhr = new XMLHttpRequest();
-		xhr.open("POST", "/style/data/web-list.json", true);
+		xhr.open("GET", "/style/data/web-list.json", true);
 		xhr.onload = function(){
 			if(this.status == 200){
 				var data = JSON.parse(this.responseText);
