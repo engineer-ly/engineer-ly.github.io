@@ -1,4 +1,4 @@
-var data = [
+[
 {
 	"title": "日常",
 	"content": [
@@ -18,13 +18,13 @@ var data = [
 			"name": "站酷",
 			"logo": "style/img/zhanku.png",
 			"label": ["中文","原创","社区"],
-			"info": '综合性"设计师社区"',
+			"info": "综合性\"设计师社区\"",
 			"link": "https://www.zcool.com.cn"
 		},{
 			"name": "oursketch",
 			"logo": "style/img/zhanku.png",
 			"label": ["中文","sketch","资源"],
-			"info": '少量优质sketch资源',
+			"info": "少量优质sketch资源",
 			"link": "https://oursketch.com"
 		}
 	]
