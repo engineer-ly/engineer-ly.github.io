@@ -1,4 +1,4 @@
-[
+var data = [
 {
 	"title": "日常",
 	"content": [

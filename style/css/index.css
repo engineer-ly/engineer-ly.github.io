@@ -10,11 +10,35 @@ body{
 	background-color: #0D263F;
 	font-size: 14px;
 	line-height: 1.4;
-	transition: all 4s ease-out;
+	/*transition: all .1s ease-out;*/
 	font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 li{
 	list-style: none;
+}
+
+
+/*loading*/
+body div.load{
+	animation: move 2s infinite linear; 
+}
+p.load::after{
+	content: '';
+	animation: load 2s infinite linear; 
+}
+@keyframes load{
+    0%,100%{
+		content: '';
+    }
+    25%{
+		content: '.';
+    }
+    50%{
+		content: '..';
+    }
+    75%{
+		content: '...';
+    }
 }
 
 .wrap{
@@ -188,7 +212,6 @@ html::-webkit-scrollbar-track {/*滚动条里面轨道*/
         transform:rotateX(720deg) rotateY(360deg) rotateZ(360deg);
     }
 }
-
 
 div.cube{
 	display: inline-block;
