@@ -18,6 +18,23 @@ li{
 }
 
 
+/*滚动条样式*/
+html::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+html::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.2);
+}
+html::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    /*border-radius: 10px;*/
+    background: rgba(0,0,0,0.2);
+}
+
+
 /*loading*/
 body div.load{
 	animation: move 2s infinite linear; 
@@ -65,7 +82,7 @@ header > .wrap > .menu::after{
 	position: absolute;
 	bottom: 12px;
 	left: 0;
-	width: calc(100% - 20px);
+	width: 100%;
 	height: 3px;
 	display: inline-block;
 	background-color: rgba(0,0,0,0.2);
@@ -79,6 +96,24 @@ header > .wrap > .menu > li{
 	color: rgba(255,255,255,0.6);
 	transition: all 0.2s ease-out;
 	position: relative;
+}
+header > .wrap > .menu > *:nth-last-child(2){
+	position: relative;
+	margin-right: 0;
+}
+header > .wrap > .menu > *:nth-last-child(2)::before{
+	content: '';
+	position: absolute;
+	width: 1px;
+	height: 10px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	left: -20px;
+	background-color: rgba(255,255,255,0.5);
+}
+header > .wrap > .menu > *:nth-last-child(3){
+	margin-right: 40px;
 }
 header > .wrap > .menu > li.on{
 	color: #fff;
@@ -96,18 +131,81 @@ header > .wrap > .menu > .now{
 
 
 header > .wrap > .right{
-	background-color: #fff;
-	color: #333;
+	background-color: rgba(255,255,255,0.1);
+	color: #fff;
 	line-height: 1;
 	padding: 16px 24px;
+	/*border-radius: 0 0 10px 10px;*/
 	float: right;
 	font-size: 14px;
 	font-weight: normal;
 	transition: all 0.3s ease-out;
 }
-header > .wrap > .right:hover{
 
+/*动画关键帧，翻滚吧！牛宝宝*/
+@keyframes move{
+    0%{
+        transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg) ;
+    }
+    100%{
+        transform:rotateX(720deg) rotateY(360deg) rotateZ(360deg);
+    }
 }
+
+div.cube{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 6px;
+    width: 20px;                                               /*box设置宽度200像素*/
+    height: 20px;                                              /*设置高度200像素*/
+    position: relative;                                         /*开启相对定位，好让里面的元素开启定位时不会高度塌陷*/
+    color: #fff;                                             /*字体的颜色*/
+    font-size: 10px;                                            /*字体大小*/
+    text-align: center;                                         /*文本字体左右居中*/
+    line-height: 20px;                                         /*行高设置，这样文本就在比box中是上下居中*/
+    transform-style: preserve-3d ;                              /*开启这个，表示所有元素在3D平面呈现*/
+    transform: rotateX(-50deg) rotateY(-50deg) rotateZ(0deg);   /*一开始的角度，视觉上看一下*/
+    animation: move 40s infinite linear;                         /*启动动画的名字、时长、无限循环、匀速播放*/
+}
+
+/*大的正方体的设置*/
+.cube > div{
+    width: 100%;                              /*设置的宽度和父级一样*/
+    height: 100%;                             /*设置的高度一样*/
+    border: 1px solid #fff;               /*边框设置*/
+    position: absolute;                       /*开启绝对定位，这样就全部叠在一起了*/
+    background-color: rgba(51,51,51,.8);
+    transition:transform 0.3s ease-in;        /*过度变形的时间设置和快慢设置*/
+}
+
+/*设置大的正方体的六个面的位置*/
+.cube div.out-front{
+    /*background-color: #262dff;*/
+    transform: translateZ(10px);                   /*设置前面的那一面的Z轴往前移*/
+}
+.cube div.out-back{
+    /*background-color: #ff4426;*/
+    transform: translateZ(-10px) rotateY(180deg);  /*设置后面的那一面的Z轴往后移，Y轴转一下。使得的背面的那一面是面向背面的*/
+}
+.cube div.out-left{
+    /*background-color: #fafd2e;*/
+    transform: translateX(-10px) rotateY(-90deg);  /*设置左边的那一面在X轴上退一些，向左转*/
+}
+.cube div.out-right{
+    /*background-color: #f226ff;*/
+    transform: translateX(10px) rotateY(90deg);    /*设置右边的那一面在X轴上进一些，向右转*/
+}
+.cube div.out-top{
+    /*background-color: #26f5ff;*/
+    transform: translateY(-10px) rotateX(90deg);   /*设置上边的那一面在Y轴上去一些，向后翻转*/
+}
+.cube div.out-bottom{
+    /*background-color: #26ff37;*/
+    transform: translateY(10px) rotateX(-90deg);   /*设置下边的那一面在X轴下去一些，向前翻*/
+}
+
+
+
 
 
 .content{
@@ -182,88 +280,107 @@ header > .wrap > .right:hover{
 	overflow: hidden;
 	padding-right: 20px;
 }
-
-
-/*滚动条样式*/
-html::-webkit-scrollbar {/*滚动条整体样式*/
-    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
-    height: 1px;
+.web-list > li:last-child > .title{
+	font-size: 20px;
+	text-align: center;
+	border: none;
 }
-html::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
-    border-radius: 2px;
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    background: rgba(255,255,255,0.2);
-}
-html::-webkit-scrollbar-track {/*滚动条里面轨道*/
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    /*border-radius: 10px;*/
-    background: rgba(0,0,0,0.2);
+.web-list > li:last-child > .title::after{
+	content: ' / Tips';
 }
 
 
-
-
-/*动画关键帧，翻滚吧！牛宝宝*/
-@keyframes move{
-    0%{
-        transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg) ;
-    }
-    100%{
-        transform:rotateX(720deg) rotateY(360deg) rotateZ(360deg);
-    }
+.tips{
+	padding: 4px;
+	min-height: 500px;
+	background-color: rgba(0,0,0,0.1);
+	font-size: 0;
 }
-
-div.cube{
+.tips > li{
 	display: inline-block;
 	vertical-align: middle;
-	margin-right: 6px;
-    width: 20px;                                               /*box设置宽度200像素*/
-    height: 20px;                                              /*设置高度200像素*/
-    position: relative;                                         /*开启相对定位，好让里面的元素开启定位时不会高度塌陷*/
-    color: #fff;                                             /*字体的颜色*/
-    font-size: 10px;                                            /*字体大小*/
-    text-align: center;                                         /*文本字体左右居中*/
-    line-height: 20px;                                         /*行高设置，这样文本就在比box中是上下居中*/
-    transform-style: preserve-3d ;                              /*开启这个，表示所有元素在3D平面呈现*/
-    transform: rotateX(-50deg) rotateY(-50deg) rotateZ(0deg);   /*一开始的角度，视觉上看一下*/
-    animation: move 40s infinite linear;                         /*启动动画的名字、时长、无限循环、匀速播放*/
+	font-size: 14px;
+	padding: 16px;
+	width: 25%;
+	height: 120px;
+	border: 1px solid #0e2336;
+	background-color: rgba(255,255,255,0.02);
+	transition: all 0.2s ease-out;
+	position: relative;
+	font-size: 0;
+}
+.tips > li:hover{
+	background-color: rgba(255,255,255,0.05);
 }
 
-/*大的正方体的设置*/
-.cube > div{
-    width: 100%;                              /*设置的宽度和父级一样*/
-    height: 100%;                             /*设置的高度一样*/
-    border: 1px solid #fff;               /*边框设置*/
-    position: absolute;                       /*开启绝对定位，这样就全部叠在一起了*/
-    background-color: rgba(51,51,51,.8);
-    transition:transform 0.3s ease-in;        /*过度变形的时间设置和快慢设置*/
+.tips > li > .num{
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 10px;
+	height: 10px;
+	border-radius: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin-right: 10px;
+	font-size: 14px;
+}
+.tips > li > .num.red{
+	background-color: red;
+}
+.tips > li > .num.yellow{
+	background-color: yellow;
+}
+.tips > li > .num.orange{
+	background-color: orange;
+}
+.tips > li > .num.blue{
+	background-color: #1573ff;
 }
 
-/*设置大的正方体的六个面的位置*/
-.cube div.out-front{
-    /*background-color: #262dff;*/
-    transform: translateZ(10px);                   /*设置前面的那一面的Z轴往前移*/
+.tips > li > span{
+	display: block;
+	height: 86px;
+	line-height: 1.6;
+	text-align: justify;
+	overflow: auto;
+	font-size: 14px;
 }
-.cube div.out-back{
-    /*background-color: #ff4426;*/
-    transform: translateZ(-10px) rotateY(180deg);  /*设置后面的那一面的Z轴往后移，Y轴转一下。使得的背面的那一面是面向背面的*/
+.tips > li > span::-webkit-scrollbar{
+	display: none;
 }
-.cube div.out-left{
-    /*background-color: #fafd2e;*/
-    transform: translateX(-10px) rotateY(-90deg);  /*设置左边的那一面在X轴上退一些，向左转*/
+.tips > li:hover > .ok{
+	opacity: 1;
 }
-.cube div.out-right{
-    /*background-color: #f226ff;*/
-    transform: translateX(10px) rotateY(90deg);    /*设置右边的那一面在X轴上进一些，向右转*/
+.tips > li > .ok{
+	opacity: 0;
+	position: absolute;
+	z-index: 1;
+	right: 0px;
+	bottom: -34px;
+	background-color: #30FFA2;
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	color: #666;
+	font-weight: normal;
+	cursor: pointer;
+	border-radius: 0 0 10px 10px;
+	transition: all 0.2s ease-out;
+	font-size: 14px;
 }
-.cube div.out-top{
-    /*background-color: #26f5ff;*/
-    transform: translateY(-10px) rotateX(90deg);   /*设置上边的那一面在Y轴上去一些，向后翻转*/
+
+
+.tips > .add{
+	font-size: 40px;
+	text-align: center;
+	line-height: 76px;
+	cursor: pointer;
 }
-.cube div.out-bottom{
-    /*background-color: #26ff37;*/
-    transform: translateY(10px) rotateX(-90deg);   /*设置下边的那一面在X轴下去一些，向前翻*/
-}
+
+
+
 
 
 
@@ -272,7 +389,7 @@ footer{
 	border-top: 1px solid rgba(0,0,0,0.1);
 	width: 1240px;
 	margin: 0 auto;
-	padding: 20px 20px 800px 20px;
+	padding: 20px;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
