@@ -43,6 +43,9 @@ p.load::after{
 	content: '';
 	animation: load 2s infinite linear; 
 }
+.load.tips{
+	opacity: 0;
+}
 @keyframes load{
     0%,100%{
 		content: '';
@@ -331,11 +334,14 @@ div.cube{
 .tips > li > .num.yellow{
 	background-color: yellow;
 }
-.tips > li > .num.orange{
-	background-color: orange;
+.tips > li > .num.green{
+	background-color: #2eff2e;
 }
 .tips > li > .num.blue{
 	background-color: #1573ff;
+}
+.tips > li > .num.pink{
+	background-color: #ffa5db;
 }
 
 .tips > li > span{
@@ -370,15 +376,99 @@ div.cube{
 	transition: all 0.2s ease-out;
 	font-size: 14px;
 }
-
-
 .tips > .add{
 	font-size: 40px;
 	text-align: center;
 	line-height: 76px;
 	cursor: pointer;
 }
-
+.tips-add{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 101;
+	width: 100%;
+	min-width: 1240px;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+.tips-add > .form{
+	width: 280px;
+	max-height: 80%;
+	margin: 200px auto;
+	background-color: #0D263F;
+	padding: 20px;
+	transition: all 0.2s ease-out;
+}
+.tips-add > .form.show{
+	margin-top: 180px;
+}
+.tips-add > .form > h2{
+	text-align: center;
+	margin-bottom: 14px;
+}
+.tips-add > .form > textarea{
+	border-radius: 4px;
+	width: 100%;
+	height: 80px;
+	resize: none;
+	background-color: rgba(0,0,0,0.1);
+	border: none;
+	color: #fff;
+	padding: 10px;
+	transition: all 0.2s ease-out;
+}
+.tips-add > .form > textarea::-webkit-scrollbar{
+	display: none;
+}
+.tips-add > .form > textarea:focus{
+	outline: none;
+	background-color: rgba(0,0,0,0.2);
+}
+.tips-add > .form > input[type="radio"]{
+	outline: none;
+    -webkit-appearance: none;
+    padding: 8px;
+    border-radius: 20px;
+    margin-right: 4px;
+    margin-top: 10px;
+    border:2px solid #0D263F;
+}
+.tips-add > .form > input[type="radio"]:checked{
+	border:2px solid #fff;
+}
+.tips-add > .form > input[type="radio"].red{
+	background-color: red;
+}
+.tips-add > .form > input[type="radio"].yellow{
+	background-color: yellow;
+}
+.tips-add > .form > input[type="radio"].green{
+	background-color: #2eff2e;
+}
+.tips-add > .form > input[type="radio"].blue{
+	background-color: #1573ff;
+}
+.tips-add > .form > input[type="radio"].pink{
+	background-color: #ffa5db;
+}
+.tips-add > .form > .done{
+	background-color: rgba(255,255,255,0.05);
+	border-radius: 4px;
+	text-align: center;
+	margin: 20px;
+	padding: 10px 0;
+	cursor: pointer;
+	box-shadow: 0 3px 0 0 rgba(0,0,0,0.3);
+	transition: all 0.2s ease-out;
+}
+.tips-add > .form > .done:hover{
+	background-color: rgba(255,255,255,0.08);
+}
+.tips-add > .form > .done:active{
+	box-shadow: 0 0px 0 0 rgba(0,0,0,0.3);
+}
 
 
 

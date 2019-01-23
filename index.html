@@ -53,14 +53,14 @@
 
 			<p class="load" style="text-align: center;">努力加载中</p>
 		</ul>
-		<ul class="tips">
+		<ul class="tips load">
 			<li>
 				<em class="num red"></em>
 				<span>这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要</span>
 				<div class="ok">我已完成</div>
 			</li>
 			<li>
-				<em class="num orange"></em>
+				<em class="num green"></em>
 				<span>这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要</span>
 				<div class="ok">我已完成</div>
 			</li>
@@ -74,8 +74,25 @@
 				<span>这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要</span>
 				<div class="ok">我已完成</div>
 			</li>
-			<li class="add">+</li>
+			<li>
+				<em class="num pink"></em>
+				<span>这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要</span>
+				<div class="ok">我已完成</div>
+			</li>
+			<li class="add" onclick="tipsFn.add()">+</li>
 		</ul>
+		<div class="tips-add" onclick="tipsFn.close()">
+			<ul class="form">
+				<h2>添加小贴士</h2>
+				<textarea placeholder="在此输入你的Tips" maxlength="255"></textarea>
+				<input type="radio" name="color" class="red" value="red">
+				<input type="radio" name="color" class="yellow" value="yellow">
+				<input type="radio" name="color" class="green" value="green">
+				<input type="radio" name="color" class="blue" value="blue">
+				<input type="radio" name="color" class="pink" value="pink">
+				<div class="done">添加</div>
+			</ul>
+		</div>
 	</div>
 	
 

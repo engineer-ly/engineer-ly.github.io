@@ -31,6 +31,25 @@ var pakeRoll = {
 }
 
 
+// 添加tips
+var tipsFn = {
+	add: function(){
+		$(".tips-add").fadeIn(200);
+		$(".tips-add > .form").addClass("show");
+	},
+	close: function(){
+		$(".tips-add").fadeOut(200);
+		$(".tips-add > .form").removeClass("show");
+
+	}
+}
+$(function(){
+	$(".tips-add > .form").click(function(event){
+		event.stopPropagation();
+	})
+})
+	
+
 
 $(function(){
 
@@ -110,7 +129,6 @@ $(function(){
 	}
 
 
-	
 
 
 })
