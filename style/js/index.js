@@ -1,4 +1,30 @@
+// 设置、获取cookie方法
+function setCookie(c_name,value,expiredays){
+	var exdate=new Date()
+	exdate.setDate(exdate.getDate()+expiredays)
+	document.cookie=c_name+ "=" +escape(value)+
+	((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+}
+function getCookie(c_name){
+	if (document.cookie.length>0)
+	  {
+	  c_start=document.cookie.indexOf(c_name + "=")
+	  if (c_start!=-1)
+	    { 
+	    c_start=c_start + c_name.length+1 
+	    c_end=document.cookie.indexOf(";",c_start)
+	    if (c_end==-1) c_end=document.cookie.length
+	    return unescape(document.cookie.substring(c_start,c_end))
+	    } 
+	  }
+	return ""
+}
 
+// JSON.parse(str) 字符串转对象
+// JSON.stringify(obj) 对象转字符串
+// setCookie("tips",str,100*365); 设置cookie
+
+// 页面缓动至某位置
 function toScroll(num) {
 	$("html, body").animate({
 		scrollTop: num
@@ -31,24 +57,50 @@ var pakeRoll = {
 }
 
 
-// 添加tips
+
+// tips
 var tipsFn = {
-	add: function(){
+	tcookie: "",
+	show: function(){
 		$(".tips-add").fadeIn(200);
 		$(".tips-add > .form").addClass("show");
 	},
 	close: function(){
 		$(".tips-add").fadeOut(200);
 		$(".tips-add > .form").removeClass("show");
-
+	},
+	add: function(){
+		var info = $(".tips-add > .form > textarea").val();
+		var color = $(".tips-add > .form > input[name='color']").filter(":checked").val();
+		console.log(info,color);
+		if(info){
+			$(".tips-add > .form").addClass("stop");
+			// if(typeof(tipsFn.tcookie) !=){
+				
+			// }
+			tipsFn.tcookie.push({"info":info,"color":color});
+			// setCookie("tips",str,100*365);
+		}else{
+			alert("请输入Tips后再添加")
+		}
 	}
 }
 $(function(){
+	// 获取浏览器cookie
+	tipsFn.tcookie = getCookie("tips");
+	if(tipsFn.tcookie){
+		// tipsFn.tcookie = JSON.parse(getCookie("tips"));
+		alert(123)
+	}else{
+		tipsFn.tcookie = new Array;
+	}
+	// 阻止 .form元素 事件冒泡
 	$(".tips-add > .form").click(function(event){
 		event.stopPropagation();
 	})
 })
 	
+
 
 
 $(function(){

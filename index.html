@@ -79,18 +79,18 @@
 				<span>这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要</span>
 				<div class="ok">我已完成</div>
 			</li>
-			<li class="add" onclick="tipsFn.add()">+</li>
+			<li class="add" onclick="tipsFn.show()">+</li>
 		</ul>
 		<div class="tips-add" onclick="tipsFn.close()">
 			<ul class="form">
 				<h2>添加小贴士</h2>
-				<textarea placeholder="在此输入你的Tips" maxlength="255"></textarea>
+				<textarea placeholder="在此记录你的Tips" maxlength="255"></textarea>
 				<input type="radio" name="color" class="red" value="red">
 				<input type="radio" name="color" class="yellow" value="yellow">
 				<input type="radio" name="color" class="green" value="green">
 				<input type="radio" name="color" class="blue" value="blue">
 				<input type="radio" name="color" class="pink" value="pink">
-				<div class="done">添加</div>
+				<div class="done" onclick="tipsFn.add()">添加</div>
 			</ul>
 		</div>
 	</div>
