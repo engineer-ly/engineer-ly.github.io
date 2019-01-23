@@ -277,10 +277,8 @@ div.cube{
 	margin-top: 4px;
 	color: #fff;
 	opacity: 0.6;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 1;
-	max-height: 15px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 	overflow: hidden;
 	padding-right: 20px;
 }
