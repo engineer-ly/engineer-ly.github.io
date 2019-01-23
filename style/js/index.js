@@ -71,26 +71,45 @@ var tipsFn = {
 	},
 	add: function(){
 		var info = $(".tips-add > .form > textarea").val();
-		var color = $(".tips-add > .form > input[name='color']").filter(":checked").val();
-		console.log(info,color);
+		var color = $(".tips-add > .form > input:checked").val();
 		if(info){
-			$(".tips-add > .form").addClass("stop");
-			// if(typeof(tipsFn.tcookie) !=){
-				
-			// }
-			tipsFn.tcookie.push({"info":info,"color":color});
-			// setCookie("tips",str,100*365);
+			$(".tips-add > .form").addClass("stop"); //阻止form内元素点击 - 开启
+			tipsFn.tcookie.push({"info":info,"color":color}); //数据数组push新内容
+			setCookie("tips",JSON.stringify(tipsFn.tcookie),100*365); //添加至cookie
+			tipsFn.close();  //关闭添加tips界面
+			tipsFn.elem(info,color);
+			$(".tips-add > .form > textarea").val("");  //清除textarea内容
+			$(".tips-add > .form > input:checked").attr("checked",false); //清除radio选中
+			$(".tips-add > .form").removeClass("stop"); //阻止form内元素点击 - 解除
 		}else{
 			alert("请输入Tips后再添加")
 		}
+	},
+	elem: function(info,color){
+		var x =
+		'<li>'+
+			'<em class="num '+ color +'"></em>'+
+			'<span>'+ info +'</span>'+
+			'<div class="ok" onclick="tipsFn.done(this)">我已完成</div>'+
+		'</li>';
+		$(".tips > .add").before(x);
+
+	},
+	done: function(it){
+		var num = $(it).parent().index();
+		tipsFn.tcookie.splice(num,1);
+		setCookie("tips",JSON.stringify(tipsFn.tcookie),100*365);
+		$(it).parent().remove();
 	}
 }
 $(function(){
 	// 获取浏览器cookie
 	tipsFn.tcookie = getCookie("tips");
 	if(tipsFn.tcookie){
-		// tipsFn.tcookie = JSON.parse(getCookie("tips"));
-		alert(123)
+		tipsFn.tcookie = JSON.parse(getCookie("tips"));
+		for (var i = 0; i < tipsFn.tcookie.length; i ++) {
+			tipsFn.elem(tipsFn.tcookie[i].info,tipsFn.tcookie[i].color);
+		}
 	}else{
 		tipsFn.tcookie = new Array;
 	}
