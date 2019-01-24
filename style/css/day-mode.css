@@ -64,14 +64,7 @@ header > .wrap > .right{
 	border: 1px solid #fff;
 	background-color: rgba(0,0,0,0.02);
 }
-.tips > li:not(.add):hover{
-	background-color: rgba(0,0,0,0.05);
-}
 
-.tips > li > .ok{
-	background-color: #ff5543;
-	color: #fff;
-}
 .tips > .add:hover{
 	background-color: rgba(0,0,0,0.05);
 }

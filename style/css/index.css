@@ -310,37 +310,30 @@ div.cube{
 	border-radius: 10px;
 }
 .tips > li:not(.add):hover{
-	border-radius: 10px 10px 0 0;
-	background-color: transparent;
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
 }
-
-.tips > li > .num{
-	position: absolute;
-	top: 4px;
-	left: 4px;
-	width: 10px;
-	height: 10px;
-	border-radius: 20px;
-	line-height: 20px;
-	text-align: center;
-	margin-right: 10px;
-	font-size: 14px;
-}
-.tips > li > .num.red{
+.tips > li.red,
+.tips-add > .form > input[type="radio"].red{
 	background-color: red;
 }
-.tips > li > .num.yellow{
-	background-color: yellow;
+.tips > li.orange,
+.tips-add > .form > input[type="radio"].orange{
+	background-color: #d68a00;
 }
-.tips > li > .num.green{
-	background-color: #2eff2e;
+.tips > li.green,
+.tips-add > .form > input[type="radio"].green{
+	background-color: #12a554;
 }
-.tips > li > .num.blue{
+.tips > li.blue,
+.tips-add > .form > input[type="radio"].blue{
 	background-color: #1573ff;
 }
-.tips > li > .num.pink{
-	background-color: #ffa5db;
+.tips > li.pink,
+.tips-add > .form > input[type="radio"].pink{
+	background-color: #ff75c8;
 }
+
+
 
 .tips > li > span{
 	display: block;
@@ -349,6 +342,7 @@ div.cube{
 	text-align: justify;
 	overflow: auto;
 	font-size: 14px;
+	color: #fff;
 }
 .tips > li > span::-webkit-scrollbar{
 	display: none;
@@ -360,19 +354,22 @@ div.cube{
 	opacity: 0;
 	position: absolute;
 	z-index: 1;
-	right: 0px;
-	bottom: -34px;
-	background-color: #ff5543;
-	color: transparent;
-	width: 100%;
-	height: 34px;
-	line-height: 34px;
+	right: 2px;
+	top: 2px;
+	background-color: #fff;
+	color: red;
+	width: 20px;
+	height: 20px;
+	line-height: 1;
 	text-align: center;
-	font-weight: normal;
+	font-weight: bold;
 	cursor: pointer;
-	border-radius: 0 0 10px 10px;
+	border-radius: 10px;
 	transition: all 0.2s ease-out;
-	font-size: 14px;
+	font-size: 16px;
+}
+.tips > li > .ok:hover{
+	transform: scale(1.6);
 }
 .tips > .add{
 	font-size: 40px;
@@ -464,21 +461,7 @@ div.cube{
 .tips-add > .form > input[type="radio"]:checked{
 	border:2px solid transparent;
 }
-.tips-add > .form > input[type="radio"].red{
-	background-color: red;
-}
-.tips-add > .form > input[type="radio"].yellow{
-	background-color: yellow;
-}
-.tips-add > .form > input[type="radio"].green{
-	background-color: #2eff2e;
-}
-.tips-add > .form > input[type="radio"].blue{
-	background-color: #1573ff;
-}
-.tips-add > .form > input[type="radio"].pink{
-	background-color: #ffa5db;
-}
+
 .tips-add > .form > .done{
 	background-color: transparent;
 	border-radius: 10px;

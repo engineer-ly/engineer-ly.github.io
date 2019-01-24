@@ -85,25 +85,28 @@ var tipsFn = {
 	add: function(){
 		var info = $(".tips-add > .form > textarea").val();
 		var color = $(".tips-add > .form > input:checked").val();
-		if(info){
+		if(info,color){
 			$(".tips-add > .form").addClass("stop"); //阻止form内元素点击 - 开启
 			tipsFn.tcookie.push({"info":info,"color":color}); //数据数组push新内容
 			setCookie("tips",JSON.stringify(tipsFn.tcookie),100*365); //添加至cookie
 			tipsFn.close();  //关闭添加tips界面
 			tipsFn.elem(info,color);
 			$(".tips-add > .form > textarea").val("");  //清除textarea内容
-			$(".tips-add > .form > input:checked").attr("checked",false); //清除radio选中
+			$(".tips-add > .form > input:eq(0)").attr("checked",true); //radio选中复位
 			$(".tips-add > .form").removeClass("stop"); //阻止form内元素点击 - 解除
 		}else{
 			alert("请输入内容后再次操作")
 		}
 	},
 	elem: function(info,color){
+		info = info.split('<').join('&lt;');
+		info = info.split('>').join('&gt;');
+		info = info.split(' ').join('&nbsp;');
+		console.log(info);
 		var x =
-		'<li>'+
-			'<em class="num '+ color +'"></em>'+
+		'<li class='+ color +'>'+
 			'<span>'+ info +'</span>'+
-			'<div class="ok" onclick="tipsFn.done(this)">撕掉</div>'+
+			'<div class="ok" onclick="tipsFn.done(this)">&#xd7;</div>'+
 		'</li>';
 		$(".tips > .add").before(x);
 

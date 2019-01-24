@@ -56,8 +56,7 @@
 			<p class="load" style="text-align: center;">努力加载中</p>
 		</ul>
 		<ul class="tips load">
-			<!-- <li>
-				<em class="num red"></em>
+			<!-- <li class="red">
 				<span>这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要你完成的工作这是一条需要</span>
 				<div class="ok" onclick="tipsFn.done(this)">撕掉</div>
 			</li> -->
@@ -67,10 +66,10 @@
 			<ul class="form">
 				<h2>添加小贴士</h2>
 				<textarea placeholder="在此记录你的Tips" maxlength="255"></textarea>
+				<input type="radio" name="color" class="blue" value="blue" checked>
 				<input type="radio" name="color" class="red" value="red">
-				<input type="radio" name="color" class="yellow" value="yellow">
+				<input type="radio" name="color" class="orange" value="orange">
 				<input type="radio" name="color" class="green" value="green">
-				<input type="radio" name="color" class="blue" value="blue">
 				<input type="radio" name="color" class="pink" value="pink">
 				<div class="done" onclick="tipsFn.add()">贴上去</div>
 			</ul>
