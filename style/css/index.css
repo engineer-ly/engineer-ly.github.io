@@ -225,7 +225,7 @@ div.cube{
 	border-left: 2px solid #5e10da;
 	line-height: 10px;
 	padding-left: 10px;
-	margin: 40px 0 20px 0;
+	margin: 60px 0 20px 0;
 	font-weight: normal;
 }
 .web-list > li > .s-list{
@@ -237,12 +237,12 @@ div.cube{
 	width:25%;
 	height:116px;
 	text-decoration: none;
-	background-color: rgba(255,255,255,0.02);
+	/*background-color: rgba(255,255,255,0.02);*/
 	border: 1px solid #0D263F;
 	transition: all 0.2s ease-out;
 }
 .web-list > li > .s-list > a:hover{
-	background-color: rgba(255,255,255,0.06);
+	background-color: rgba(255,255,255,0.04);
 }
 .web-list > li > .s-list > a > img{
 	width:30px;
@@ -294,7 +294,7 @@ div.cube{
 
 
 .tips{
-	padding: 4px;
+	padding: 1px;
 	min-height: 500px;
 	background-color: rgba(0,0,0,0.1);
 	font-size: 0;
@@ -501,7 +501,6 @@ div.cube{
 
 
 footer{
-	border-top: 1px solid rgba(0,0,0,0.1);
 	width: 1240px;
 	margin: 0 auto;
 	padding: 20px;
