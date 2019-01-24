@@ -1,3 +1,16 @@
+// 判断时间来控制是否启动夜间模式
+var date = new Date;
+if(date){
+	if(date.getHours() >= 17){
+		$("head").append('<link rel="stylesheet" type="text/css" href="style/css/night-mode.css">');
+	}else{
+		$("head").append('<link rel="stylesheet" type="text/css" href="style/css/day-mode.css">');
+	}
+}else{
+	$("head").append('<link rel="stylesheet" type="text/css" href="style/css/day-mode.css">');
+}
+
+
 // 设置、获取cookie方法
 function setCookie(c_name,value,expiredays){
 	var exdate=new Date()

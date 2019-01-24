@@ -3,11 +3,10 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-weight: 300;
 }
 body{
-	color: #fff;
-	background-color: #0D263F;
+	color: transparent;
+	background-color: transparent;
 	font-size: 14px;
 	line-height: 1.4;
 	/*transition: all .1s ease-out;*/
@@ -18,20 +17,8 @@ li{
 }
 
 
-/*滚动条样式*/
-html::-webkit-scrollbar {/*滚动条整体样式*/
-    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
-    height: 1px;
-}
-html::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
-    border-radius: 2px;
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    background: rgba(255,255,255,0.2);
-}
-html::-webkit-scrollbar-track {/*滚动条里面轨道*/
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    /*border-radius: 10px;*/
-    background: rgba(0,0,0,0.2);
+html::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -72,7 +59,7 @@ header{
 	left: 0;
 	width: 100%;
 	z-index: 100;
-	background-color: #0D263F;
+	background-color: transparent;
 }
 header > .wrap > .menu{
 	display: inline-block;
@@ -88,7 +75,7 @@ header > .wrap > .menu::after{
 	width: 100%;
 	height: 3px;
 	display: inline-block;
-	background-color: rgba(0,0,0,0.2);
+	background-color: transparent;
 	border-radius: 2px;
 }
 header > .wrap > .menu > li{
@@ -96,7 +83,7 @@ header > .wrap > .menu > li{
 	padding: 28px 0;
 	margin-right: 20px;
 	cursor: pointer;
-	color: rgba(255,255,255,0.6);
+	color: rgba(0,0,0,0.6);
 	transition: all 0.2s ease-out;
 	position: relative;
 }
@@ -113,13 +100,13 @@ header > .wrap > .menu > *:nth-last-child(2)::before{
 	bottom: 0;
 	margin: auto;
 	left: -20px;
-	background-color: rgba(255,255,255,0.5);
+	background-color: transparent;
 }
 header > .wrap > .menu > *:nth-last-child(3){
 	margin-right: 40px;
 }
 header > .wrap > .menu > li.on{
-	color: #fff;
+	color: transparent;
 }
 header > .wrap > .menu > .now{
 	position: absolute;
@@ -127,15 +114,15 @@ header > .wrap > .menu > .now{
 	left: 0px;
 	transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
 	height: 3px;
-	background-color: #30FFA2;
+	background-color: transparent;
 	border-radius: 2px;
 	z-index: 10;
 }
 
 
 header > .wrap > .right{
-	background-color: rgba(255,255,255,0.1);
-	color: #fff;
+	background-color: rgba(0,0,0,0.1);
+	color: transparent;
 	line-height: 1;
 	padding: 16px 24px;
 	border-radius: 0 0 10px 10px;
@@ -162,7 +149,7 @@ div.cube{
     width: 20px;                                               /*box设置宽度200像素*/
     height: 20px;                                              /*设置高度200像素*/
     position: relative;                                         /*开启相对定位，好让里面的元素开启定位时不会高度塌陷*/
-    color: #fff;                                             /*字体的颜色*/
+    color: transparent;                                             /*字体的颜色*/
     font-size: 10px;                                            /*字体大小*/
     text-align: center;                                         /*文本字体左右居中*/
     line-height: 20px;                                         /*行高设置，这样文本就在比box中是上下居中*/
@@ -175,7 +162,7 @@ div.cube{
 .cube > div{
     width: 100%;                              /*设置的宽度和父级一样*/
     height: 100%;                             /*设置的高度一样*/
-    border: 1px solid #fff;               /*边框设置*/
+    border: 1px solid transparent;               /*边框设置*/
     position: absolute;                       /*开启绝对定位，这样就全部叠在一起了*/
     background-color: rgba(51,51,51,.8);
     transition:transform 0.3s ease-in;        /*过度变形的时间设置和快慢设置*/
@@ -225,8 +212,16 @@ div.cube{
 	border-left: 2px solid #5e10da;
 	line-height: 10px;
 	padding-left: 10px;
-	margin: 60px 0 20px 0;
+	margin: 40px 0 20px 0;
 	font-weight: normal;
+}
+.web-list > li > .title::after{
+	content: '';
+	height: 1px;
+	width: calc(100% - 100px);
+	background-color: transparent;
+	float: right;
+	margin-top: 5px;
 }
 .web-list > li > .s-list{
 	font-size: 0;
@@ -237,13 +232,13 @@ div.cube{
 	width:25%;
 	height:116px;
 	text-decoration: none;
-	/*background-color: rgba(255,255,255,0.02);*/
-	border: 1px solid #0D263F;
+	/*background-color: rgba(0,0,0,0.02);*/
+	border: 1px solid transparent;
 	transition: all 0.2s ease-out;
 	border-radius: 10px;
 }
 .web-list > li > .s-list > a:hover{
-	background-color: rgba(255,255,255,0.04);
+	background-color: rgba(0,0,0,0.04);
 }
 .web-list > li > .s-list > a > img{
 	width:30px;
@@ -255,7 +250,7 @@ div.cube{
 .web-list > li > .s-list > a > p{
 	font-size:16px;
 	margin-top: 16px;
-	color: #fff;
+	color: transparent;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -263,20 +258,20 @@ div.cube{
 }
 .web-list > li > .s-list > a > em{
 	font-size: 12px;
-	color: rgba(255,255,255,0.8);
+	color: rgba(0,0,0,0.8);
 	display: inline-block;
 	margin: 8px 6px 8px 0;
 	font-style: normal;
 	padding: 2px 8px;
 	/*background-color: rgb(255,255,255,0.05);*/
-	border: 1px solid rgba(255,255,255,0.2);
+	border: 1px solid rgba(0,0,0,0.2);
 	border-radius: 20px;
 }
 .web-list > li > .s-list > a > span{
 	font-size:12px;
 	display: block;
 	margin-top: 4px;
-	color: #fff;
+	color: transparent;
 	opacity: 0.6;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -291,13 +286,14 @@ div.cube{
 }
 .web-list > li:last-child > .title::after{
 	content: ' / Tips';
+	float: none;
+	background-color: transparent;
 }
 
 
 .tips{
 	padding: 1px;
 	min-height: 500px;
-	background-color: rgba(0,0,0,0.1);
 	font-size: 0;
 	border-radius: 10px;
 }
@@ -308,8 +304,8 @@ div.cube{
 	padding: 16px;
 	width: 25%;
 	height: 120px;
-	border: 1px solid #0e2336;
-	background-color: rgba(255,255,255,0.02);
+	border: 1px solid transparent;
+	background-color: rgba(0,0,0,0.02);
 	transition: all 0.2s ease-out;
 	position: relative;
 	font-size: 0;
@@ -317,7 +313,7 @@ div.cube{
 }
 .tips > li:not(.add):hover{
 	border-radius: 10px 10px 0 0;
-	background-color: rgba(255,255,255,0.05);
+	background-color: transparent;
 }
 
 .tips > li > .num{
@@ -369,6 +365,7 @@ div.cube{
 	right: 0px;
 	bottom: -34px;
 	background-color: #ff5543;
+	color: transparent;
 	width: 100%;
 	height: 34px;
 	line-height: 34px;
@@ -386,7 +383,7 @@ div.cube{
 	cursor: pointer;
 }
 .tips > .add:hover{
-	background-color: rgba(255,255,255,0.05);
+	background-color: transparent;
 }
 .tips-add{
 	display: none;
@@ -397,13 +394,13 @@ div.cube{
 	width: 100%;
 	min-width: 1240px;
 	height: 100%;
-	background-color: rgba(0,0,0,0.5);
+	background-color: transparent;
 }
 .tips-add > .form{
 	width: 280px;
 	max-height: 80%;
 	margin: 200px auto;
-	background-color: #0D263F;
+	background-color: transparent;
 	padding: 20px;
 	transition: all 0.2s ease-out;
 	border-radius: 10px;
@@ -446,7 +443,7 @@ div.cube{
 	resize: none;
 	background-color: rgba(0,0,0,0.1);
 	border: none;
-	color: #fff;
+	color: transparent;
 	padding: 10px;
 	transition: all 0.2s ease-out;
 }
@@ -455,7 +452,7 @@ div.cube{
 }
 .tips-add > .form > textarea:focus{
 	outline: none;
-	background-color: rgba(0,0,0,0.2);
+	background-color: transparent;
 }
 .tips-add > .form > input[type="radio"]{
 	outline: none;
@@ -464,10 +461,10 @@ div.cube{
     border-radius: 20px;
     margin-right: 4px;
     margin-top: 10px;
-    border:2px solid #0D263F;
+    border:2px solid transparent;
 }
 .tips-add > .form > input[type="radio"]:checked{
-	border:2px solid #fff;
+	border:2px solid transparent;
 }
 .tips-add > .form > input[type="radio"].red{
 	background-color: red;
@@ -485,21 +482,22 @@ div.cube{
 	background-color: #ffa5db;
 }
 .tips-add > .form > .done{
-	background-color: rgba(255,255,255,0.05);
+	background-color: transparent;
 	border-radius: 10px;
+	color: transparent;
 	text-align: center;
 	margin: 20px;
 	line-height: 1;
 	padding: 12px 0;
 	cursor: pointer;
-	box-shadow: 0 3px 0 0 rgba(0,0,0,0.3);
+	box-shadow: 0 3px 0 0 transparent;
 	transition: all 0.2s ease-out;
 }
 .tips-add > .form > .done:hover{
-	background-color: rgba(255,255,255,0.08);
+	background-color: #2f53ff;
 }
 .tips-add > .form > .done:active{
-	box-shadow: 0 0px 0 0 rgba(0,0,0,0.3);
+	box-shadow: 0 0px 0 0 transparent;
 }
 
 

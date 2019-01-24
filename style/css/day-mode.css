@@ -1,0 +1,107 @@
+body{
+	color: #333;
+	background-color: #fff;
+}
+
+header{
+	background-color: #fff;
+}
+
+header > .wrap > .menu::after{
+	background-color: rgba(0,0,0,0.05);
+}
+header > .wrap > .menu > li{
+	color: rgba(0,0,0,0.6);
+}
+header > .wrap > .menu > *:nth-last-child(2)::before{
+	background-color: rgba(0,0,0,0.5);
+}
+header > .wrap > .menu > li.on{
+	color: #333;
+}
+header > .wrap > .menu > .now{
+	background-color: #254afd;
+}
+
+header > .wrap > .right{
+	background-color: rgba(0,0,0,0.1);
+	color: #333;
+}
+
+/*大的正方体的设置*/
+.cube > div{                           /*设置的高度一样*/
+    border: 1px solid #fff; 
+    background-color: rgba(51,51,51,.8);
+}
+
+.web-list > li > .title{
+	border-left: 2px solid #5e10da;
+}
+.web-list > li > .title::after{
+	background-color: rgba(0,0,0,0.04);
+}
+.web-list > li > .s-list > a{
+	border: 1px solid #fff;
+}
+.web-list > li > .s-list > a:hover{
+	background-color: rgba(0,0,0,0.04);
+}
+.web-list > li > .s-list > a > p{
+	color: #333;
+}
+.web-list > li > .s-list > a > em{
+	color: rgba(0,0,0,0.8);
+	border: 1px solid rgba(0,0,0,0.2);
+}
+.web-list > li > .s-list > a > span{
+	color: #333;
+}
+
+.tips{
+	background-color: rgba(0,0,0,0);
+}
+.tips > li{
+	border: 1px solid #fff;
+	background-color: rgba(0,0,0,0.02);
+}
+.tips > li:not(.add):hover{
+	background-color: rgba(0,0,0,0.05);
+}
+
+.tips > li > .ok{
+	background-color: #ff5543;
+	color: #fff;
+}
+.tips > .add:hover{
+	background-color: rgba(0,0,0,0.05);
+}
+.tips-add{
+	background-color: rgba(0,0,0,0.5);
+}
+.tips-add > .form{
+	background-color: #fff;
+}
+.tips-add > .form > textarea{
+	color: #333;
+	background-color: rgba(0,0,0,0.1);
+}
+.tips-add > .form > textarea:focus{
+	background-color: rgba(0,0,0,0.15);
+}
+.tips-add > .form > input[type="radio"]{
+    border:2px solid #fff;
+}
+.tips-add > .form > input[type="radio"]:checked{
+	border:2px solid #333;
+}
+.tips-add > .form > .done{
+	box-shadow: 0 3px 0 0 #06209e;
+	color: #fff;
+	background-color: #254afd;
+}
+.tips-add > .form > .done:hover{
+	background-color: #2f53ff;
+}
+.tips-add > .form > .done:active{
+	box-shadow: 0 0px 0 0 rgba(0,0,0,0.3);	
+}
