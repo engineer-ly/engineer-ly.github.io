@@ -26,8 +26,8 @@ header > .wrap > .menu > .now{
 	background-color: #30FFA2;
 }
 
-header > .wrap > .right{
-	background-color: rgba(255,255,255,0.1);
+header > .wrap > .logo{
+	/*background-color: rgba(255,255,255,0.1);*/
 	color: #fff;
 }
 

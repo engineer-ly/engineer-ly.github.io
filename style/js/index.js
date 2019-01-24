@@ -105,7 +105,7 @@ var tipsFn = {
 		var x =
 		'<li class='+ color +'>'+
 			'<span>'+ info +'</span>'+
-			'<div class="ok" onclick="tipsFn.done(this)">&#xd7;</div>'+
+			'<div class="ok" onclick="tipsFn.done(this)"></div>'+
 		'</li>';
 		$(".tips > .add").before(x);
 

@@ -119,15 +119,17 @@ header > .wrap > .menu > .now{
 }
 
 
-header > .wrap > .right{
-	background-color: rgba(0,0,0,0.1);
+header > .wrap > .logo{
+	/*background-color: rgba(0,0,0,0.1);*/
 	color: transparent;
 	line-height: 1;
-	padding: 16px 24px;
-	border-radius: 0 0 10px 10px;
-	float: right;
-	font-size: 14px;
+	padding: 16px 0px;
+	border-radius: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 18px;
 	font-weight: normal;
+	margin-right: 40px;
 	transition: all 0.3s ease-out;
 }
 
@@ -144,7 +146,7 @@ header > .wrap > .right{
 div.cube{
 	display: inline-block;
 	vertical-align: middle;
-	margin-right: 6px;
+	margin-right: 10px;
     width: 20px;                                               /*box设置宽度200像素*/
     height: 20px;                                              /*设置高度200像素*/
     position: relative;                                         /*开启相对定位，好让里面的元素开启定位时不会高度塌陷*/
@@ -357,7 +359,10 @@ div.cube{
 	right: 2px;
 	top: 2px;
 	background-color: #fff;
-	color: red;
+	background-image: url(../icon/ico_close.png);
+	background-size: 10px 10px;
+	background-position: center center;
+	background-repeat: no-repeat;
 	width: 20px;
 	height: 20px;
 	line-height: 1;
