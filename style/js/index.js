@@ -216,6 +216,8 @@ $(function(){
 	}
 
 
+	// tips最小高度自动
+	$(".tips").css("min-height",$(window).height() - 200 + "px");
 
 
 })

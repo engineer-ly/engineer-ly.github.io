@@ -64,7 +64,6 @@ header{
 header > .wrap > .menu{
 	display: inline-block;
 	font-size: 16px;
-	font-weight: bold;
 	position: relative;
 }
 header > .wrap > .menu::after{
@@ -293,7 +292,6 @@ div.cube{
 
 .tips{
 	padding: 1px;
-	min-height: 500px;
 	font-size: 0;
 	border-radius: 10px;
 }
