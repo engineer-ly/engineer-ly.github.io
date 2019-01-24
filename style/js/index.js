@@ -1,5 +1,5 @@
 // 判断时间来控制是否启动夜间模式
-var date = new Date;
+// var date = new Date;
 if(typeof(date) != "undefined"){
 	if(date.getHours() >= 17){
 		$("head").append('<link rel="stylesheet" type="text/css" href="style/css/night-mode.css">');
@@ -218,7 +218,7 @@ $(function(){
 
 
 		// tips最小高度自动
-		$(".tips").css("min-height",$(window).height() - 200 + "px");
+		$(".tips").css("min-height",$(window).height() - 280 + "px");
 
 
 		// title循环添加背景图
