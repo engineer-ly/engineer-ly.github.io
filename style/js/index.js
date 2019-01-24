@@ -95,7 +95,7 @@ var tipsFn = {
 			$(".tips-add > .form > input:checked").attr("checked",false); //清除radio选中
 			$(".tips-add > .form").removeClass("stop"); //阻止form内元素点击 - 解除
 		}else{
-			alert("请输入内容后再添加")
+			alert("请输入内容后再次操作")
 		}
 	},
 	elem: function(info,color){
@@ -103,7 +103,7 @@ var tipsFn = {
 		'<li>'+
 			'<em class="num '+ color +'"></em>'+
 			'<span>'+ info +'</span>'+
-			'<div class="ok" onclick="tipsFn.done(this)">我已完成</div>'+
+			'<div class="ok" onclick="tipsFn.done(this)">撕掉</div>'+
 		'</li>';
 		$(".tips > .add").before(x);
 
