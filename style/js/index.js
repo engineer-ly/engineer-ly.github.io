@@ -19,7 +19,7 @@ function getCookie(c_name){
 	  }
 	return ""
 }
-
+// cookie存对象方法
 // JSON.parse(str) 字符串转对象
 // JSON.stringify(obj) 对象转字符串
 // setCookie("tips",str,100*365); 设置cookie
@@ -96,10 +96,13 @@ var tipsFn = {
 
 	},
 	done: function(it){
-		var num = $(it).parent().index();
-		tipsFn.tcookie.splice(num,1);
-		setCookie("tips",JSON.stringify(tipsFn.tcookie),100*365);
-		$(it).parent().remove();
+		var key = confirm("是否确认");
+		if(key){
+			var num = $(it).parent().index();
+			tipsFn.tcookie.splice(num,1);
+			setCookie("tips",JSON.stringify(tipsFn.tcookie),100*365);
+			$(it).parent().remove();
+		}
 	}
 }
 $(function(){
