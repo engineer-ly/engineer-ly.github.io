@@ -79,6 +79,7 @@ header > .wrap > .menu::after{
 }
 header > .wrap > .menu > li{
 	display: inline-block;
+	vertical-align: middle;
 	padding: 28px 0;
 	margin-right: 20px;
 	cursor: pointer;
@@ -120,16 +121,13 @@ header > .wrap > .menu > .now{
 
 
 header > .wrap > .logo{
-	/*background-color: rgba(0,0,0,0.1);*/
 	color: transparent;
-	line-height: 1;
-	padding: 16px 0px;
-	border-radius: 10px;
 	display: inline-block;
 	vertical-align: middle;
-	font-size: 18px;
-	font-weight: normal;
-	margin-right: 40px;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 28px 0;
+	margin-right: 50px;
 	transition: all 0.3s ease-out;
 }
 
@@ -142,7 +140,6 @@ header > .wrap > .logo{
         transform:rotateX(720deg) rotateY(360deg) rotateZ(360deg);
     }
 }
-
 div.cube{
 	display: inline-block;
 	vertical-align: middle;
@@ -151,9 +148,6 @@ div.cube{
     height: 20px;                                              /*设置高度200像素*/
     position: relative;                                         /*开启相对定位，好让里面的元素开启定位时不会高度塌陷*/
     color: transparent;                                             /*字体的颜色*/
-    font-size: 10px;                                            /*字体大小*/
-    text-align: center;                                         /*文本字体左右居中*/
-    line-height: 20px;                                         /*行高设置，这样文本就在比box中是上下居中*/
     transform-style: preserve-3d ;                              /*开启这个，表示所有元素在3D平面呈现*/
     transform: rotateX(-50deg) rotateY(-50deg) rotateZ(0deg);   /*一开始的角度，视觉上看一下*/
     animation: move 40s infinite linear;                         /*启动动画的名字、时长、无限循环、匀速播放*/
@@ -210,19 +204,13 @@ div.cube{
 	
 }
 .web-list > li > .title{
-	border-left: 2px solid #5e10da;
-	line-height: 10px;
+	font-size: 20px;
 	padding-left: 10px;
-	margin: 40px 0 20px 0;
+	padding: 60px 0 30px 0;
 	font-weight: normal;
-}
-.web-list > li > .title::after{
-	content: '';
-	height: 1px;
-	width: calc(100% - 100px);
-	background-color: transparent;
-	float: right;
-	margin-top: 5px;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center center;	
 }
 .web-list > li > .s-list{
 	font-size: 0;
@@ -264,12 +252,10 @@ div.cube{
 	margin: 8px 6px 8px 0;
 	font-style: normal;
 	padding: 2px 8px;
-	/*background-color: rgb(255,255,255,0.05);*/
-	border: 1px solid rgba(0,0,0,0.2);
 	border-radius: 20px;
 }
 .web-list > li > .s-list > a > span{
-	font-size:12px;
+	font-size:14px;
 	display: block;
 	margin-top: 4px;
 	color: transparent;
@@ -284,11 +270,6 @@ div.cube{
 	text-align: center;
 	border: none;
 	margin: 60px 0 30px 0;
-}
-.web-list > li:last-child > .title::after{
-	content: ' / Tips';
-	float: none;
-	background-color: transparent;
 }
 
 
@@ -377,13 +358,27 @@ div.cube{
 	transform: scale(1.6);
 }
 .tips > .add{
-	font-size: 40px;
-	text-align: center;
-	line-height: 76px;
 	cursor: pointer;
+	position: relative;
 }
 .tips > .add:hover{
 	background-color: transparent;
+}
+.tips > .add > i{
+	display: block;
+	width: 30px;
+	height: 4px;
+	border-radius: 4px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.tips > .add > i:last-child{
+	width: 4px;
+	height: 30px;
 }
 .tips-add{
 	display: none;
@@ -404,6 +399,7 @@ div.cube{
 	padding: 20px;
 	transition: all 0.2s ease-out;
 	border-radius: 10px;
+	text-align: center;
 }
 .tips-add > .form.show{
 	margin-top: 180px;

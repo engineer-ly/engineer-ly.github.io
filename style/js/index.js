@@ -1,6 +1,6 @@
 // 判断时间来控制是否启动夜间模式
 var date = new Date;
-if(date){
+if(typeof(date) != "undefined"){
 	if(date.getHours() >= 17){
 		$("head").append('<link rel="stylesheet" type="text/css" href="style/css/night-mode.css">');
 	}else{
@@ -65,7 +65,7 @@ var pakeRoll = {
 		pakeRoll.menu();
 	},
 	list: function(num){
-		toScroll( $(".web-list > li:eq(" + num + ")").offset().top - 100 )
+		toScroll( $(".web-list > li:eq(" + num + ")").offset().top - 80 )
 	}
 }
 
@@ -190,7 +190,7 @@ $(function(){
 	}
 	getData();
 
-
+	// 数据就绪后
 	function pageLoad(){
 		$("header > .wrap > .menu > li:eq(0)").addClass("on");
 		pakeRoll.menu();
@@ -198,7 +198,7 @@ $(function(){
 
 		var arr = new Array();
 		$(".web-list > li").each(function(){
-			arr.push($(this).offset().top - 100);
+			arr.push($(this).offset().top - 80);
 		})
 		var windowTimer;
 
@@ -215,11 +215,27 @@ $(function(){
 				pakeRoll.on(x);
 			}, 100)
 		})
+
+
+		// tips最小高度自动
+		$(".tips").css("min-height",$(window).height() - 200 + "px");
+
+
+		// title循环添加背景图
+		var titleNum = -1;
+		$(".web-list > li > .title").each(function(){
+			titleNum ++;
+			var num = (titleNum % 3 + 1);
+			$(this).css("background-image","url(style/icon/ico_title"+ num +".png)");
+		})
 	}
 
 
-	// tips最小高度自动
-	$(".tips").css("min-height",$(window).height() - 200 + "px");
+	
+
+
+
+
 
 
 })

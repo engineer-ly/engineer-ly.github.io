@@ -27,7 +27,6 @@ header > .wrap > .menu > .now{
 }
 
 header > .wrap > .logo{
-	/*background-color: rgba(255,255,255,0.1);*/
 	color: #fff;
 }
 
@@ -37,9 +36,6 @@ header > .wrap > .logo{
     background-color: rgba(51,51,51,.8);
 }
 
-.web-list > li > .title{
-	border-left: 2px solid #5e10da;
-}
 .web-list > li > .title::after{
 	background-color: rgba(255,255,255,0.05);
 }
@@ -54,7 +50,7 @@ header > .wrap > .logo{
 }
 .web-list > li > .s-list > a > em{
 	color: rgba(255,255,255,0.8);
-	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgb(255,255,255,0.05);
 }
 .web-list > li > .s-list > a > span{
 	color: #fff;
@@ -70,6 +66,9 @@ header > .wrap > .logo{
 
 .tips > .add:hover{
 	background-color: rgba(255,255,255,0.05);
+}
+.tips > .add > i{
+	background-color: rgb(255,255,255,0.6);
 }
 .tips-add{
 	background-color: rgba(0,0,0,0.5);
