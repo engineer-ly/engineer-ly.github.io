@@ -82,7 +82,7 @@ var tipsFn = {
 			$(".tips-add > .form > input:checked").attr("checked",false); //清除radio选中
 			$(".tips-add > .form").removeClass("stop"); //阻止form内元素点击 - 解除
 		}else{
-			alert("请输入Tips后再添加")
+			alert("请输入内容后再添加")
 		}
 	},
 	elem: function(info,color){
