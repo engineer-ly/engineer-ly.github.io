@@ -85,7 +85,7 @@ var tipsFn = {
 	add: function(){
 		var info = $(".tips-add > .form > textarea").val();
 		var color = $(".tips-add > .form > input:checked").val();
-		if(info,color){
+		if(info&&color){
 			$(".tips-add > .form").addClass("stop"); //阻止form内元素点击 - 开启
 			tipsFn.tcookie.push({"info":info,"color":color}); //数据数组push新内容
 			setCookie("tips",JSON.stringify(tipsFn.tcookie),100*365); //添加至cookie
@@ -102,7 +102,6 @@ var tipsFn = {
 		info = info.split('<').join('&lt;');
 		info = info.split('>').join('&gt;');
 		info = info.split(' ').join('&nbsp;');
-		console.log(info);
 		var x =
 		'<li class='+ color +'>'+
 			'<span>'+ info +'</span>'+

@@ -41,7 +41,7 @@ header > .wrap > .right{
 	border-left: 2px solid #5e10da;
 }
 .web-list > li > .title::after{
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(255,255,255,0.05);
 }
 .web-list > li > .s-list > a{
 	border: 1px solid #0D263F;
