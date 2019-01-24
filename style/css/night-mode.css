@@ -29,7 +29,9 @@ header > .wrap > .menu > .now{
 header > .wrap > .logo{
 	color: #fff;
 }
-
+header > .wrap > .logo > .pic{
+	background-image: url(../icon/logo_white.png);
+}
 /*大的正方体的设置*/
 .cube > div{                           /*设置的高度一样*/
     border: 1px solid #fff;               /*边框设置*/
