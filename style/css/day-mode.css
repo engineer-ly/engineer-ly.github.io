@@ -99,3 +99,6 @@ header > .wrap > .logo > .pic{
 .tips-add > .form > .done:active{
 	box-shadow: 0 0px 0 0 rgba(0,0,0,0.3);	
 }
+footer > a{
+	color: #333;
+}
