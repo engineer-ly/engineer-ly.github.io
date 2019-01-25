@@ -52,7 +52,7 @@ header > .wrap > .logo > .pic{
 }
 .web-list > li > .s-list > a > em{
 	color: rgba(255,255,255,0.8);
-	background-color: rgb(255,255,255,0.05);
+	background-color: rgba(255,255,255,0.05);
 }
 .web-list > li > .s-list > a > span{
 	color: #fff;
