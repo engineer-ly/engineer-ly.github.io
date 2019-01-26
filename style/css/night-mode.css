@@ -38,14 +38,13 @@ header > .wrap > .logo > .pic{
     background-color: rgba(51,51,51,.8);
 }
 
-.web-list > li > .title::after{
-	background-color: rgba(255,255,255,0.05);
-}
+
 .web-list > li > .s-list > a{
-	border: 1px solid #0D263F;
+	border: 4px solid #0D263F;
+	background-color: rgba(255,255,255,0.02);
 }
 .web-list > li > .s-list > a:hover{
-	background-color: rgba(255,255,255,0.04);
+	background-color: rgba(255,255,255,0.05);
 }
 .web-list > li > .s-list > a > p{
 	color: #fff;
