@@ -23,9 +23,6 @@ html::-webkit-scrollbar {
 
 
 /*loading*/
-body div.load{
-	animation: move 2s infinite linear; 
-}
 p.load::after{
 	content: '';
 	animation: load 2s infinite linear; 
