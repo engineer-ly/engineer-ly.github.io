@@ -139,7 +139,7 @@ header > .wrap > .logo > .pic{
 /*动画关键帧，翻滚吧！牛宝宝*/
 @keyframes move{
     0%{
-        transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg) ;
+        transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
     100%{
         transform:rotateX(720deg) rotateY(360deg) rotateZ(360deg);
