@@ -122,4 +122,17 @@ $(function(){
 	})
 
 
+	// pc端点击下载按钮
+	$(".banner > .wrap > .right > .btn").on("click",function(){
+		var num = $(window).width();
+		if(num >= 867){
+			$(".download-ewm").fadeIn(200);
+			$(".download-ewm").on("click",function(){
+				$(this).fadeOut(200);
+			})
+			return false;
+		}
+	});
+
+
 })
