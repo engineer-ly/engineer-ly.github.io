@@ -233,11 +233,11 @@ header.down .menu > a{
   background-position: 16px center;
   padding-left: 40px;
   color: #333;
-  box-shadow: 0 3px 0 0 #CCCCCC;
+  box-shadow: 0 2px 0 0 #CCCCCC;
   border: none;
 }
 .banner > .wrap > .right > .btn:active{
-  transform: translateY(3px);
+  transform: translateY(2px);
   box-shadow: 0 0px 0 0 #CCCCCC;
 }
 .banner .other-left{
@@ -402,7 +402,7 @@ header.down .menu > a{
   margin-bottom: 60px;
 }
 .about > *{
-  width: 50%;
+  width: 100%;
   display: inline-block;
   vertical-align: top;
 }
@@ -411,10 +411,11 @@ header.down .menu > a{
   padding: 6px;
 }
 .about > span{
-  padding: 20px;
+  padding: 0 20px;
   font-size: 16px;
   color: #666;
   line-height: 1.8;
+  text-indent: 2em;
 }
 
 footer{
@@ -520,7 +521,7 @@ footer > .wrap > .copyright > span:last-child{
     border-radius: 4px;
   }
   .about > span{
-    padding: 20px 0;
+    padding: 0;
   }
   footer{
     padding-top: 30px;
@@ -712,7 +713,7 @@ footer > .wrap > .copyright > span:last-child{
 }
 
 
-.download-ewm{
+.download-ewm-bg{
   display: none;
   position: fixed;
   top: 0;
@@ -722,13 +723,42 @@ footer > .wrap > .copyright > span:last-child{
   z-index: 400;
   background-color: rgba(0,0,0,0.5);
 }
-.download-ewm > img{
+.download-ewm{
+  width: 260px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 30px;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
+  text-align: center;
 }
+.download-ewm > .lawyer{
+  display: none;
+}
+.download-ewm.lawyer > .user{
+  display: none;
+}
+.download-ewm.lawyer > .lawyer{
+  display: block;
+}
+.download-ewm img{
+  width: 100%;
+}
+.download-ewm p{
+  font-size: 16px;
+  margin-top: 10px;
+  color: #333;
+}
+.download-ewm p > em{
+  font-style: normal;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 
 

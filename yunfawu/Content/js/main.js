@@ -126,10 +126,15 @@ $(function(){
 	$(".banner > .wrap > .right > .btn").on("click",function(){
 		var num = $(window).width();
 		if(num >= 867){
-			$(".download-ewm").fadeIn(200);
-			$(".download-ewm").on("click",function(){
+			$(".download-ewm-bg").fadeIn(200);
+			$(".download-ewm-bg").on("click",function(){
 				$(this).fadeOut(200);
 			})
+			if($(this).hasClass("lawyer")){
+				$(".download-ewm").addClass("lawyer");
+			}else {
+				$(".download-ewm").removeClass("lawyer");
+			}
 			return false;
 		}
 	});
