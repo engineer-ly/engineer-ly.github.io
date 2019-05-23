@@ -1,0 +1,22 @@
+{
+    "id":"LS4563423532423",
+    "state":1,
+    "title":"国内手机回收业务市场调查",
+    "priority":2,
+    "master":"LS4563NJF",
+    "member":["LS4563NJF","LS45GN4453","LS4663NJF"],
+    "overTime":"yyyy-MM-dd HH:mm:ss",
+    "file":["http://XXX.com/demo.png","http://XXX.com/demo.png"],
+    "tips":"这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注",
+    "comment":[
+        {
+            "user":"LS4563NJF",
+            "time":"yyyy-MM-dd HH:mm:ss",
+            "info":"这是一条评论这是一条评论这是一条评论"
+        },{
+            "user":"LS4563NJF",
+            "time":"yyyy-MM-dd HH:mm:ss",
+            "info":"这是一条评论这是一条评论这是一条评论"
+        }
+    ]
+}

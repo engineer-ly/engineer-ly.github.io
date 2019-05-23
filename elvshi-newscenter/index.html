@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>e律师-消息中心</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="style-newscenter/css/normalize.css">
+    <link rel="stylesheet" href="style-newscenter/css/all.css">
+    
+    <!-- 公共样式 start // 临时引入 -->
+    <link rel="stylesheet" type="text/css" href="http://test.elvshi.cn/Content/css/bootstrap.css?v=6867868678">
+    <link id="main_link" rel="stylesheet" type="text/css" href="http://test.elvshi.cn/Content/css/parts2.css?v=20181130">
+    <link id="main_link2" rel="stylesheet" type="text/css" href="http://test.elvshi.cn/Content/css/main_white.css?v=123121231312">
+    <script src="http://test.elvshi.cn/Content/js/jquery_1.11.3.min.js?v=123121231312"></script>
+    <script type="text/javascript" src="http://test.elvshi.cn/Content/js/bootstrap.js?v=123121231312"></script>
+    <script src="http://test.elvshi.cn/Content/Js/CityList.js?v=1231212311323312" charset="gb2312" type="text/javascript"></script>
+    <script src="http://test.elvshi.cn/Content/Js/jquery.form.js?v=123121231312"></script>
+    <script src="http://test.elvshi.cn/Content/Js/MouseOpen.js?v=123121231312"></script>
+    <script src="http://test.elvshi.cn/Content/Js/WebSiteJs.js?v=20181123"></script>
+    <script src="http://test.elvshi.cn/Content/layer/layer.js?v=123121231312"></script>
+    <script src="http://test.elvshi.cn/Content/js/jquery.validate.js?v=123121231312"></script>
+    <script src="http://test.elvshi.cn/Content/js/jquery.validate.min.js?v=123121231312"></script>
+    <script src="http://test.elvshi.cn/Content/js/messages_zh.js?v=123121231312"></script>
+    <script src="http://test.elvshi.cn/Content/Js/layDate-v5.0.9/laydate/laydate.js?v=123121231312"></script>
+    <script src="http://test.elvshi.cn/Content/Js/echarts.min.js?v=123121231312"></script>
+    <script type="text/javascript" src="http://test.elvshi.cn/Content/js/parts.js?v=123121231312"></script>
+    <!-- 公共样式 end -->
+
+
+
+    <script src='style-newscenter/js/main.js'></script>
+</head>
+<body>
+
+    <!-- 页面加载动画 -->
+    <div class="load1" id="loading">
+        <div class="loader">Loading...</div>
+    </div>
+
+    <div class="newscenter-body">
+        <div class="wrap">
+            <div class="menu">
+                <div class="title">消息中心</div>
+                <ul class="list">
+                    <a href="###" class="card on">
+                        <img src="style-newscenter/img/user.png" class="pic">
+                        <div class="right">
+                            <p class="title">案源中心<em class="num">12</em></p>
+                            <p class="info">冯小宇：这是一条消息这是一条这是一条消息这是一条</p>
+                            <p class="time">2019/04/15 08:34</p>
+                        </div>
+                    </a>
+                    <a href="###" class="card">
+                        <img src="style-newscenter/img/user.png" class="pic">
+                        <div class="right">
+                            <p class="title">系统更新日志<em class="version">V1.0.12</em><em class="num">12</em></p>
+                            <p class="info">这是一条消息这是一条消息消息消…</p>
+                            <p class="time">2019/04/15 08:34</p>
+                        </div>
+                    </a>
+
+                </ul>
+            </div>
+            <div class="content">
+                <div class="title">案源中心</div>
+                
+
+                <form class="container-fluid page_find" id="searchForm"/>    
+                    <div class="input-group">
+                        <input type="text" name="Title" id="Title" class="form-control" />
+                    </div>
+                    <div class="down_box">
+                        <select name="SearchType">
+                            <option value="3">委托人/嫌疑人搜索</option>
+                            <option value="4">对方当事人搜索</option>
+                            <option value="1">案号搜索</option>
+                            <option value="8">专属案号搜索</option>
+                            <option value="7">案由搜索</option>
+                            <option value="5">承办律师搜索</option>
+                            <option value="6">受理法院搜索</option>
+                            <option value="9">归档号搜索</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="检索" class="btn_solid" />
+                    <button class="btn_hollow" style="margin-left: 40px;">全部已阅</button>
+                </form>
+                
+
+                <!-- 气泡列表 -->
+                <div class="list-bubble">
+                    <li>
+                        <img src="style-newscenter/img/user.png" class="pic">
+                        <div class="right">
+                            <p class="time">2019/04/15 08:34</p>
+                            <div class="bubble">
+                                <p class="title">
+                                    图书借阅审批-图书借阅提醒
+                                    <em class="unread">未读</em>
+                                </p>
+                                <p class="info">这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容</p>
+                                <a href="javascript:newscenterPopup.open()" class="more" onclick="">查看详情</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="style-newscenter/img/user.png" class="pic">
+                        <div class="right">
+                            <p class="time">2019/04/15 08:34</p>
+                            <div class="bubble">
+                                <p class="title">
+                                    图书借阅审批-图书借阅提醒
+                                    <em class="version">V1.0.12</em>
+                                </p>
+                                <p class="info">这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容</p>
+                                <a href="javascript:newscenterPopup.open()" class="more">查看详情</a>
+                            </div>
+                        </div>
+                    </li>
+
+                </div>
+
+                
+                <!-- 行列表 -->
+                <div class="list-row">
+                    <a href="###" class="card">
+                        <img src="style-newscenter/img/user.png" class="pic">
+                        <em class="num">8</em>
+                        <div class="info">
+                            <p class="title">孙思思</p>
+                            <p class="txt">这是一条消息这是一条消息这是一条消息这是一条这是一条消息这是一条消息这是一条消息这是一条</p>
+                            <p class="time">2019/04/15 08:34</p>
+                        </div>
+                    </a>
+                    <a href="###" class="card">
+                        <img src="style-newscenter/img/user.png" class="pic">
+                        <em class="num">8</em>
+                        <div class="info">
+                            <p class="title">孙思思</p>
+                            <p class="txt">这是一条消息这是一条消息这是一条消息这是一条这是一条消息这是一条消息这是一条消息这是一条</p>
+                            <p class="time">2019/04/15 08:34</p>
+                        </div>
+                    </a>
+
+                    <p class="nomore">没有更多</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="newscenter-popup">
+        <div class="popup-view">
+            <div class="top">
+                高贺望 or 系统更新日志
+                <div class="close" onclick="newscenterPopup.close()"></div>
+            </div>
+
+            <!-- 对话 -->
+            <div class="talk">
+                <ul class="sms">
+                    <li class="Q">
+                        <p class="time">2018年10月12日 14:65</p>
+                        <span>这是发送的内容这是发送的内容</span>
+                        <img src="style-newscenter/img/user.png" class="photo">
+                    </li>
+                    <li class="A">
+                        <p class="time">2018年10月12日 14:65</p>
+                        <img src="style-newscenter/img/user.png" class="photo">
+                        <span>收到的回复</span>
+                    </li>
+
+                </ul>
+                <form class="inputbox">
+                    <textarea class="text" placeholder="在此输入内容与对方沟通"></textarea>
+                    <input type="submit" name="" value="发送" class="btn-small">
+                </form>
+            </div>
+            
+            <!-- 日志 -->
+            <div class="notes">
+                <div class="title">
+                    <p class="txt">建议与投诉上线</p>
+                    <em class="version">V1.0.34</em>
+                    <p class="time">2019/4/2 16:32:05</p>
+                </div>
+                <div class="info">
+                    <!-- 在此填入富文本 -->
+                    <p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>
+                    <p>这是内容</p>
+                    <p>这是内容</p>
+                    <img src="style-newscenter/img/user.png">
+                    <p>这是内容</p><img src="style-newscenter/img/user.png">
+                    <p>这是内容</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

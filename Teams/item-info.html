@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>e律师-协同</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <link rel="icon" href="Content/icon/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="Content/css/normalize.css">
+    <link rel="stylesheet" href="Content/css/all.css">
+    <script src='Content/js/jquery-1.8.3.min.js'></script>
+    <script src='Content/js/main.js'></script>
+</head>
+<body id="item-info">
+<div class="wrap">
+    <nav class="echo-nav">
+        <div class="left">
+            <a href="javascript:window.history.back(-1);" class="back">返回上一页</a>
+        </div>
+        <div class="center">
+            <span class="title">新增项目 or 编辑项目 or 查看项目</span>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="wrap-small">
+
+            <ul class="item-info-input">
+                <div class="title">基本信息</div>
+                <li>
+                    <p>项目名称</p>
+                    <input disabled type="text" name="" value="添加disabled改变为浏览样式" placeholder="请输入">
+                </li>
+                <li>
+                    <p>项目编号（非必填）</p>
+                    <input type="text" name="" class="settime" placeholder="请输入">
+                </li>
+                <li>
+                    <p>项目编号（非必填）</p>
+                    <input type="text" name="" class="settime" placeholder="请输入">
+                </li>
+                <li class="setbase">
+                    <p>项目编号（非必填）</p>
+                    <select>
+                        <option>全国</option>
+                        <option>上海</option>
+                        <option>北京</option>
+                    </select>
+                    <select>
+                        <option>全国</option>
+                        <option>上海</option>
+                        <option>北京</option>
+                    </select>
+                    <select>
+                        <option>全国</option>
+                        <option>上海</option>
+                        <option>北京</option>
+                    </select>
+                </li>
+            </ul>
+
+            <ul class="item-gray-bg">
+                <div class="title">成员</div>
+                <li>
+                    <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                        <img class="photo" src="Content/img/user.png">
+                        <span class="name">田峰凝</span>
+                    </div>
+                    <span class="master">创建人</span>
+                    <span class="firm">浙江XX律师事务所</span>
+                </li>
+                <li>
+                    <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                        <img class="photo" src="Content/img/user.png">
+                        <span class="name">田峰凝</span>
+                    </div>
+                    <span class="firm">浙江XX律师事务所</span>
+                    <button class="rm">移除</button>
+                </li>
+                <li>
+                    <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                        <img class="photo" src="Content/img/user.png">
+                        <span class="name">田峰凝</span>
+                    </div>
+                    <span class="firm">浙江XX律师事务所</span>
+                    <button class="rm">移除</button>
+                </li>
+                <li class="add" onclick="addUser.show(this)">
+                    <img src="Content/icon/icon_add.png">
+                    <span>添加成员</span>
+                    <div class="item-user-add">
+                        <input class="input-box" type="search" name="userName" placeholder="请输入律师名字">
+                        <ul class="tab">
+                            <li class="on">所内</li>
+                            <li>所外</li>
+                        </ul>
+                        <ul class="user-list">
+                            <li>
+                                <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                                    <img class="photo" src="Content/img/user.png">
+                                    <span class="name">田峰凝</span>
+                                </div>
+                                <span class="firm">浙江XX律师事务所</span>
+                            </li>
+                            <li>
+                                <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                                    <img class="photo" src="Content/img/user.png">
+                                    <span class="name">田峰凝</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <p class="waiting">待确认成员</p>
+                <li>
+                    <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                        <img class="photo" src="Content/img/user.png">
+                        <span class="name">田峰凝</span>
+                    </div>
+                    <span class="firm">浙江XX律师事务所</span>
+                    <button class="rm">移除</button>
+                </li>
+            </ul>
+
+            <ul class="item-gray-bg">
+                <div class="title">附件</div>
+                <li>
+                    <a href="###" class="file-name" download>关于任务的相关已知信息.doc关于任务的相关已知信息.doc关于任务的相关已知信息.doc关于任务的相关已知信息.doc</a>
+                    <button class="rm">删除</button>
+                </li>
+                <li>
+                    <a href="###" class="file-name" download>关于任务的相关已知信息.doc关于任务的相关已知信息.doc关于任务的相关已知信息.doc关于任务的相关已知信息.doc</a>
+                    <button class="rm">删除</button>
+                </li>
+                <li>
+                    <a href="###" class="file-name" download>关于任务的相关已知信息.doc关于任务的相关已知信息.doc关于任务的相关已知信息.doc关于任务的相关已知信息.doc</a>
+                    <button class="rm">删除</button>
+                </li>
+                <div class="upload-shell">
+                    <div class="file-upload">
+                        <input type="file" name="">上传文件
+                    </div>
+                </div>
+            </ul>
+        </div>
+        <div class="item-info-footer">
+            <button class="btn-big">确认</button>
+            <button class="btn-big-h rm">取消</button>
+        </div>
+    </div>
+
+
+
+  
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

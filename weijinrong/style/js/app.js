@@ -1,3 +1,6 @@
+
+// Young Codeing
+
 	// 设置、获取cookie方法
 	function setCookie(c_name,value,expiredays){
 		var exdate=new Date()
@@ -115,6 +118,48 @@ $(function(){
 		
 	   	
 
+	$(window).scroll(function(){
+		var num = $(window).scrollTop();
+		
+		if(num > 100){
+			$("header").addClass('nav_solid');
+		}
+		if(num <= 100){
+			$("header").removeClass('nav_solid');
+		}
+		
+	})
+
+	$(".phone_menu_btn").click(function(){
+
+		if($(".menu").css('display') == 'none'){
+			$("header").addClass('nav_top')
+		}else{
+			$("header").removeClass('nav_top')
+		}
+		
+	})
+
+	$(".team_data_close").click(function(){
+		$(".team-overlay").click();
+	})
+
+
+	// 语言切换
+	$(".language").click(function(){
+		$(".language_interface").fadeIn(200);
+	});
+
+	$(".language_interface").click(function(){
+		$(".language_interface").fadeOut(200);
+	});
+
+	$(".language_interface li").click(function(){
+		$(".language_interface").fadeOut(200);
+		var lan = $(this).attr("lan");
+		switchLan( lan );
+		location.reload();
+	});
 
 	
 	
@@ -938,7 +983,11 @@ $(function(){
 	})
 
 	$('.home-scroll-down').click(function(){
-		smoothScrolling(this, 55, 800)
+		// smoothScrolling(this, 55, 800);
+		var num = $(".hero-slides").height() - 60;
+		$("html, body").animate({
+			scrollTop: num
+		}, "800")
   	return false
 	})
 
@@ -1033,51 +1082,7 @@ $(function(){
 
 
 
-// Young Codeing
-$(window).scroll(function(){
-	var num = $(window).scrollTop();
-	
-	if(num > 100){
-		$("header").addClass('nav_solid');
-		$(".top_logo").css('backgroundColor', 'rgba(0,0,0,0.8)');
-		// $(".top_logo").css('backgroundColor', '#372d23');
-	}
-	if(num <= 100){
-		$("header").removeClass('nav_solid');
-		$(".top_logo").css('backgroundColor', '');
-	}
-	
-})
 
-$("header").click(function(){
-	if($(".menu").css('display') == 'none'){
-		$("header").addClass('nav_top')
-	}else{
-		$("header").removeClass('nav_top')
-	}
-	
-})
-
-$(".team_data_close").click(function(){
-	$(".team-overlay").click();
-})
-
-
-// 语言切换
-$(".language").click(function(){
-	$(".language_interface").fadeIn(200);
-});
-
-$(".language_interface").click(function(){
-	$(".language_interface").fadeOut(200);
-});
-
-$(".language_interface li").click(function(){
-	$(".language_interface").fadeOut(200);
-	var lan = $(this).attr("lan");
-	switchLan( lan );
-	location.reload();
-});
 
 
 	

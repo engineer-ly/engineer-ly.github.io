@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>e律师-协同</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <link rel="icon" href="Content/icon/logo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="Content/css/normalize.css">
+    <link rel="stylesheet" href="Content/css/all.css">
+    <script src='Content/js/jquery-1.8.3.min.js'></script>
+    <script src='Content/js/main.js'></script>
+</head>
+<body id="item">
+<div class="wrap">
+    <nav class="echo-nav">
+        <div class="left">
+            <a href="javascript:window.history.back(-1);" class="back">返回上一页</a>
+        </div>
+        <div class="center">
+            <a href="item-info.html" class="title more">高某某行贿案</a>
+        </div>
+        <div class="right">
+            <div class="select">
+                <p>操作项目</p>
+                <div class="fn">
+                    <a href="item-info.html">编辑项目</a>
+                    <a href="javascript:confirm('完结项目？')">完结项目</a>
+                    <a href="javascript:confirm('删除项目？')" class="rm">删除项目</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="left">
+            <div class="top">
+                <div class="search">
+                    <input type="search" name="" placeholder="请输入搜索内容">
+                    <button class="go"></button>
+                </div>
+            </div>
+            <ul class="item-stage">
+                <li class="on" onclick="stageTabFn.switch(this)"><p>市场调研、用户研究</p><span>2/6</span></li>
+                <li onclick="stageTabFn.switch(this)"><p>原型、交互、界面设计</p><span>3/15</span></li>
+                <li onclick="stageTabFn.switch(this)"><p>前后端开发</p><span>15/45</span></li>
+                <li class="add" onclick="stageTabFn.switch(this,true,)">添加阶段</li>
+            </ul>
+        </div>
+        <div class="center">
+            <div class="top stage-info-fn">
+                <input type="text" name="" value="市场调研、用户研究" placeholder="请输入阶段名" disabled onkeypress="inputBindEnter(event,this)" input-bind="stage-title">
+                <div class="fn">
+                    <button class="revise" onclick="stageFn.edit()"></button>
+                    <button class="rm" onclick="stageFn.rm()"></button>
+                    <button class="btn-small-h done" onclick="stageFn.done()" input-bind-send="stage-title">确认</button>
+                </div>
+            </div>
+            <ul class="stage-task">
+                <li class="on" onclick="taskTabFn.switch(this)">
+                    <div class="top">
+                        <input type="checkbox" name="">
+                        <p>111111111111111111111</p><em class="fast-1"></em>
+                    </div>
+                    <div class="bottom">
+                        <span>任务截止</span>
+                        <p>2019年3月15日 15:45</p>
+                    </div>
+                </li>
+                <li onclick="taskTabFn.switch(this)">
+                    <div class="top">
+                        <input type="checkbox" name="">
+                        <p>222222222222222222222</p><em class="fast-2"></em>
+                        <i class="no">已过期</i>
+                    </div>
+                    <div class="bottom">
+                        <span>任务截止</span>
+                        <p>2019年3月15日 15:45</p>
+                    </div>
+                </li>
+                <li onclick="taskTabFn.switch(this)">
+                    <div class="top">
+                        <input type="checkbox" name="">
+                        <p>333333333333333333333</p><em class="fast-3"></em>
+                        <i class="ok">已完成</i>
+                    </div>
+                    <div class="bottom">
+                        <span>任务截止</span>
+                        <p>2019年3月15日 15:45</p>
+                    </div>
+                </li>
+                <li onclick="taskTabFn.switch(this)">
+                    <div class="top">
+                        <input type="checkbox" name="">
+                        <p>444444444444444444444</p><em class="fast-3"></em>
+                        <i class="ok">已完成</i>
+                    </div>
+                    <div class="bottom">
+                        <span>任务截止</span>
+                        <p>2019年3月15日 15:45</p>
+                    </div>
+                </li>
+                <li onclick="taskTabFn.switch(this)">
+                    <div class="top">
+                        <input type="checkbox" name="">
+                        <p>555555555555555555555</p><em class="fast-3"></em>
+                        <i class="ok">已完成</i>
+                    </div>
+                    <div class="bottom">
+                        <span>任务截止</span>
+                        <p>2019年3月15日 15:45</p>
+                    </div>
+                </li>
+                <li onclick="taskTabFn.switch(this)">
+                    <div class="top">
+                        <input type="checkbox" name="">
+                        <p>666666666666666666666</p><em class="fast-3"></em>
+                        <i class="ok">已完成</i>
+                    </div>
+                    <div class="bottom">
+                        <span>任务截止</span>
+                        <p>2019年3月15日 15:45</p>
+                    </div>
+                </li>
+                <li class="add" onclick="taskTabFn.switch(this,true)">添加任务</li>
+            </ul>
+        </div>
+
+        <!-- 添加 state-look 类名将任务详情板块改为查看状态 -->
+        <div class="right state-look">
+            <div class="top stage-info-fn">
+                <p class="title">任务详情</p>
+                <div class="fn">
+                    <button class="revise" onclick="taskFn.edit()"></button>
+                    <button class="rm" onclick="taskFn.rm()"></button>
+                </div>
+            </div>
+            <ul class="task-info">
+                <li class="task-title">
+                    <span class="left">任务名称</span>
+                    <div class="right">
+                        <input type="text" name="task-info-title" placeholder="请输入任务名称" value="这是标题" disabled>
+                    </div>
+                </li>
+                <li class="task-fast">
+                    <span class="left">任务级别</span>
+                    <div class="right">
+                        <label>
+                            <input type="radio" name="task-fast" value="1" checked>
+                            <em class="fast-1"></em><span>非常紧急</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="task-fast" value="2">
+                            <em class="fast-2"></em><span>紧急</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="task-fast" value="3">
+                            <em class="fast-3"></em><span>一般</span>
+                        </label>
+                    </div>
+                </li>
+                <li class="task-member master">
+                    <span class="left">任务创建人</span>
+                    <div class="right">
+                        <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                            <img class="photo" src="Content/img/user.png">
+                            <span class="name">田峰凝</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="task-member">
+                    <span class="left">执行人</span>
+                    <div class="right">
+                        <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                            <img class="photo" src="Content/img/user.png">
+                            <span class="name">田峰凝</span>
+                            <div class="fn" onclick="taskExecutorFn.rm(this)">移除</div>
+                        </div>
+                        <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                            <img class="photo" src="Content/img/user.png">
+                            <span class="name">田峰凝</span>
+                            <div class="fn" onclick="taskExecutorFn.rm(this)">移除</div>
+                        </div>
+                        <div class="add" onclick="addUser.show(this)">
+                            <span>添加</span>
+                            <div class="item-user-add">
+                                <ul class="user-list">
+                                    <li onclick="taskExecutorFn.add(this)">
+                                        <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                                            <img class="photo" src="Content/img/user.png">
+                                            <span class="name">田峰凝</span>
+                                        </div>
+                                        <span class="firm">浙江XX律师事务所</span>
+                                    </li>
+                                    <li onclick="taskExecutorFn.add(this)">
+                                        <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                                            <img class="photo" src="Content/img/user.png">
+                                            <span class="name">田峰凝</span>
+                                        </div>
+                                    </li>
+
+                                    <a href="item-info.html" class="add">添加项目成员</a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="task-overtime">
+                    <span class="left">任务截止</span>
+                    <div class="right">
+                        <input type="text" name="task-info-overtime" class="settime" placeholder="请输入任务截止时间" value="2019年3月15日 18:43" disabled>
+                        <p class="tips">任务完成于 2019/03/15 15:45（超时3小时13分）</p>
+                    </div>
+                </li>
+                <li class="task-file">
+                    <span class="left">文件</span>
+                    <div class="right">
+                        <div class="file">
+                            <a href="###" class="download" download>关于任务的相关已知信息关于任务的相关已知信息关于任务的相关已知信息关于任务的相关已知信息.doc</a>
+                            <span class="rm" onclick="taskFileFn.rm(this)">删除</span>
+                            <p class="tips">由萧秀上传于2019年02月25日 19:34</p>
+                        </div>
+                        <div class="file">
+                            <a href="###" class="download" download>关于任务的相关已知信息.doc</a>
+                            <span class="rm" onclick="taskFileFn.rm(this)">删除</span>
+                            <p class="tips">由萧秀上传于2019年02月25日 19:34</p>
+                        </div>
+                        <div class="file-upload add">
+                            <input type="file" name="">上传文件
+                        </div>
+                    </div>
+                </li>
+                <li class="task-note">
+                    <span class="left">备注</span> 
+                    <div class="right">
+                        <textarea placeholder="请输入备注内容" disabled></textarea>
+                        <p class="txt">这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注这是备注</p>
+                    </div>
+                </li>
+                <div class="fn">
+                    <button class="btn-big done" onclick="taskFn.done()">完成</button>
+                    <button class="btn-big-h cancel" onclick="taskFn.look(true)">取消</button>
+                </div>
+
+                <li class="task-comment">
+                    <span class="left">评论</span> 
+                    <div class="right">
+                        <div class="task-comment-card">
+                            <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                                <img class="photo" src="Content/img/user.png">
+                                <span class="name">田峰凝</span>
+                            </div>
+                            <span class="time">2019年02月25日 19:37</span>
+                            <span class="rm" onclick="taskCommentFn.rm(this)">删除</span>
+                            <p>这是一条评论这是一条评论这是一条评论这是一条这是一条评论这是一条评论</p>
+                        </div>
+                        <div class="task-comment-card">
+                            <div class="user-info" onmouseover="userInfo.add(this, 'Content/img/user.png','田峰凝','v','地点','公司','电话')" onmouseout="userInfo.rm()">
+                                <img class="photo" src="Content/img/user.png">
+                                <span class="name">田峰凝</span>
+                            </div>
+                            <span class="time">2019年02月25日 19:37</span>
+                            <span class="rm" onclick="taskCommentFn.rm(this)">删除</span>
+                            <p>这是一条评论这是一条评论这是一条评论这是一条这是一条评论这是一条评论</p>
+                        </div>
+                        <div class="send">
+                            <input type="text" name="" placeholder="请输入评论" onkeypress="inputBindEnter(event,this)" input-bind="task-comment">
+                            <button class="btn-small-h" onclick="taskCommentFn.add(this)" input-bind-send="task-comment">发送</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+
+<script type="text/javascript">
+    var data = {
+        addStage : function(name){
+            //console.log('增加阶段');// 对接后台
+        },
+        changeStage : function(id,name,num){
+            //console.log('改变阶段信息');// 对接后台
+        },
+        refreshTaskList : function(){
+            //console.log('刷新任务列表');// 对接后台
+        },
+        rmStage : function(){
+            //console.log('删除阶段');// 对接后台
+        },
+        refreshTaskInfo : function(){
+            //console.log('刷新任务详情');// 对接后台
+            // 以下为临时数据
+            // $.ajax({
+            //     type: 'POST',
+            //     url: 'data/task-info.json',
+            //     success: function upPageData(result){
+            //         $("input[name='task-info-title']").val(result.title);
+            //         $("input[name='task-fast'][value='"+ result.priority +"']").attr('checked',true);
+            //         $("input[name='task-info-overtime']").val(result.overTime);
+            //     },
+            //     dataType: 'json'
+            // });
+        },
+        addTask : function(){
+            //console.log('增加任务');// 对接后台
+        },
+        changeTask : function(){
+            //console.log('编辑任务信息');// 对接后台
+        },
+        rmTask : function(){
+            //console.log('删除任务');// 对接后台
+        },
+        taskFileRm : function(){
+            //console.log('删除文件');// 对接后台
+        },
+        taskExecutorRm : function(){
+            //console.log('移除执行人');// 对接后台
+        },
+        taskExecutorAdd : function(){
+            //console.log('添加执行人');// 对接后台
+        },
+        taskCommentRm : function(){
+            //console.log('删除评论');// 对接后台
+        },
+        taskCommentAdd : function(){
+            //console.log('添加评论');// 对接后台
+        }
+    }
+    
+</script>
+
+
+
+
+</div>
+</body>
+</html>

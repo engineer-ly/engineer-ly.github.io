@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>练习</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+</head>
+
+<body id="game-body">
+	<div id="shell" class="game-shell">
+		<!-- <div class="snake head"></div>
+		<div class="snake"></div>
+		<div class="snake"></div>
+		<div class="food"></div> -->
+	</div>
+	<div class="game-fn">
+		<p>得分：<h2 id="game-score">0</h2></p>
+		<button onclick="startGame();" id="start">开始游戏</button>
+		<button onclick="pauseGame()" id="pause" style="display: none;">暂停游戏</button>
+		<br><br>
+		<div>
+			<p>难度：<strong id="level-num">1</strong></p>
+			<div id="level-fn">
+				<button onclick="level ++;levelChange();">+</button>
+				<button onclick="level --;levelChange();">-</button>
+			</div>
+		</div>
+		
+	</div>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>前端工程化-页面和左侧菜单相互绑定</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="base//normalize.css">
+    <script src='base/jquery-1.8.3.min.js'></script>
+</head>
+
+<style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      border: none;
+      color: #333;
+      font-size: 14px;
+    }
+    body, textarea, input, select{
+      font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif
+    }
+    ul, li {
+      list-style: none;
+    }
+    a{
+      text-decoration:none;
+    }
+    button,
+    textarea,
+    input{
+      outline: none;
+    }
+
+
+    .s-wrap{
+      max-width: 1040px;
+      padding: 0 20px;
+      margin: 0 auto;
+    }
+
+
+    .law-list{
+      position: relative;
+    }
+    .law-list > .left{
+      float: left;
+      width: 200px;
+      text-align: center;
+      position: absolute;
+      top: 60px;
+      padding: 0 20px;
+    }
+    .law-list > .left.fixed{
+      position: fixed;
+      top: 100px;
+    }
+    .law-list > .left > a{
+      display: block;
+      line-height: 40px;
+      color: #999;
+      font-size: 16px;
+      border-right: 2px solid #ededed;
+      transition: all 0.2s ease-out;
+    }
+    .law-list > .left > a:hover{
+      background:linear-gradient(90deg,rgba(255,255,255,1) 0%,rgba(224,234,255,1) 100%);
+    }
+    .law-list > .left > a.on{
+      border-right: 2px solid #2471b9;
+      color: #2471b9;
+      background:linear-gradient(90deg,rgba(255,255,255,1) 0%,rgba(224,234,255,1) 100%);
+    }
+    .law-list > .right{
+      margin-left: 200px;
+      padding: 60px;
+    }
+    
+    .law-list > .right > li{
+        padding-top: 60px;
+    }
+    .law-list > .right > li:first-child{
+        padding-top: 0;
+    }
+    .law-list > .right > li > h2{
+      color: #2471b9;
+      font-size: 20px;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .law-list > .right > li > span{
+      display: block;
+      color: #999;
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .law-list > .right > li > p{
+        color: #666;
+        text-indent: 2em;
+        line-height: 1.6;
+        text-align: left;
+    }
+    .law-list > .right > li > p.q:before,
+    .law-list > .right > li > p.a:before,
+    .law-list > .right > li > p.case:before{
+      position: absolute;
+      left: 0px;
+      top: 2px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+    }
+    .law-list > .right > li > p.q{
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .law-list > .right > li > p.q:before{
+      content: 'Q';
+      background-color: #00CC15;
+    }
+    .law-list > .right > li > p.a{
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .law-list > .right > li > p.a:before{
+      content: 'A';
+      background-color: #2471b9;
+    }
+    .law-list > .right > li > p.case{
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .law-list > .right > li > p.case:before{
+      content: '例';
+      background-color: #dea608;
+    }
+    .law-list > .right > li > p.tips{
+      font-size: 16px;
+      color: #2471b9;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 867px){
+      .law-list > .left{
+        display: none;
+      }
+      .law-list > .right{
+        margin-left: 0;
+        padding: 30px 0;
+      }
+    }
+
+
+    #lawyer .lawyer-list{
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+    
+    .terms-for-entry{
+        font-size: 0;
+        padding: 10px 0;
+    }
+    .terms-for-entry > li{
+        display: inline-block;
+        vertical-align: top;
+        width: 25%;
+        text-align: center;
+        padding: 0 10px;
+    }
+    .terms-for-entry > li > img{
+        max-width: 100px;
+        width: 100%;
+    }
+    .terms-for-entry > li > p{
+        font-weight: bold;
+        margin: 6px 0;
+    }
+    .terms-for-entry > li > span{
+        color: #999;
+    }
+    
+    .join-turn{
+        text-align: center;
+        font-size: 0;
+        padding: 10px 0;
+    }
+    .join-turn > li{
+        display: inline-block;
+        vertical-align: top;
+        width: 20%;
+        padding: 0 10px;
+        position: relative;
+    }
+    .join-turn > li > img{
+        max-width: 80px;
+        width: 100%;
+    }
+    .join-turn > li > p{
+        font-weight: bold;
+        margin-top: 6px;
+    }
+    .join-turn > li::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        border-top: 2px solid #bbb;
+        border-right: 2px solid #bbb;
+        width: 15px;
+        height: 15px;
+        transform:rotate(45deg);
+    }
+    .join-turn > li:last-child::after{
+        display: none;
+    }
+    
+    .place-list > .whole{
+        padding: 20px 0;
+    }
+    .place-list > .whole > .pic{
+        width: 26%;
+        max-height: 300px;
+        float: left;
+        background-color: #ededed;
+        border-radius: 4px;
+        margin-right: 20px;
+    }
+    .place-list > .whole > .info{
+        overflow: hidden;
+    }
+    .place-list > .whole > .info > p{
+        line-height: 1.6;
+        margin-bottom: 6px;
+        color: #666;
+    }
+    .place-list > .whole > .info > .title{
+        font-weight: bold;
+        color: #333;
+    }
+
+    @media screen and (max-width: 560px){
+        .terms-for-entry > li{
+            width: 50%;
+            margin-bottom: 10px;
+        }
+        .join-turn > li{
+            width: 33.333%;
+        }
+        .place-list > .whole > .pic{
+            width: 100%;
+            float: none;
+        }
+        .place-list > .whole > .info{
+            overflow: initial;
+            padding-top: 10px;
+        }
+    }
+
+</style> 
+
+<body>
+
+    
+    
+    <div class="s-wrap law-list">
+        <div class="left">
+            <a href="#s-point1" class="on">这是标题1</a>
+            <a href="#s-point2">这是标题2</a>
+            <a href="#s-point3">这是标题3</a>
+        </div>
+        <ul class="right">
+            <li id="s-point1">
+                <h2>这是标题1</h2>
+                <p>一个人坐在半岛咖啡，等待着一个朋友的到来。今天的阳光很好，热烈却不夸张。我选了一个靠窗子的位置，因为这个地方最安静，最适合倾听。朋友来了，无恙，眼神里却分明带着些许的忧伤。其实我大概知道朋友约我来的目的：他和她分手了。</p>
+                <p>我很开门见山，他也直奔主题。“你们怎么样？”“还能怎么样，分开了。”“再努力一下，也许会有转机。”“不太可能了，我们都很累了。况且，她现在不想见到我。”我无语，不知道再劝他些什么。我想，当一个女人不想再见到一个男人的时候，也许，就是在自己的心里给这个男人判了“死刑”。</p>
+                <p>在见他之前，我已经接到过她的电话。她是大学时代睡在我下铺的姐妹，而他，则是我最要好的“哥们儿”。他们的结合，是我们一大班朋友一直以来最骄傲的成果，而他们的分开，则是我们从未料想过的结局。他很爱她，这是个众人皆知的秘密。一班朋友在一起，他俩是让我们羡慕也是被我们“嘲笑”最多的对象。我们常说：“他跟她在一起，是在既当爹又当妈的基础上，才偶尔客串一下男朋友。”他从不介意这些，享受着这样身兼三职的身份。</p>
+            </li>
+
+            <li id="s-point2">
+                <h2>这是标题2</h2>
+                <p>一个人坐在半岛咖啡，等待着一个朋友的到来。今天的阳光很好，热烈却不夸张。我选了一个靠窗子的位置，因为这个地方最安静，最适合倾听。朋友来了，无恙，眼神里却分明带着些许的忧伤。其实我大概知道朋友约我来的目的：他和她分手了。</p>
+                <p>我很开门见山，他也直奔主题。“你们怎么样？”“还能怎么样，分开了。”“再努力一下，也许会有转机。”“不太可能了，我们都很累了。况且，她现在不想见到我。”我无语，不知道再劝他些什么。我想，当一个女人不想再见到一个男人的时候，也许，就是在自己的心里给这个男人判了“死刑”。</p>
+                <p>在见他之前，我已经接到过她的电话。她是大学时代睡在我下铺的姐妹，而他，则是我最要好的“哥们儿”。他们的结合，是我们一大班朋友一直以来最骄傲的成果，而他们的分开，则是我们从未料想过的结局。他很爱她，这是个众人皆知的秘密。一班朋友在一起，他俩是让我们羡慕也是被我们“嘲笑”最多的对象。我们常说：“他跟她在一起，是在既当爹又当妈的基础上，才偶尔客串一下男朋友。”他从不介意这些，享受着这样身兼三职的身份。</p>
+            </li>
+
+            <li id="s-point3">
+                <h2>这是标题3</h2>
+                <p>一个人坐在半岛咖啡，等待着一个朋友的到来。今天的阳光很好，热烈却不夸张。我选了一个靠窗子的位置，因为这个地方最安静，最适合倾听。朋友来了，无恙，眼神里却分明带着些许的忧伤。其实我大概知道朋友约我来的目的：他和她分手了。</p>
+                <p>我很开门见山，他也直奔主题。“你们怎么样？”“还能怎么样，分开了。”“再努力一下，也许会有转机。”“不太可能了，我们都很累了。况且，她现在不想见到我。”我无语，不知道再劝他些什么。我想，当一个女人不想再见到一个男人的时候，也许，就是在自己的心里给这个男人判了“死刑”。</p>
+                <p>在见他之前，我已经接到过她的电话。她是大学时代睡在我下铺的姐妹，而他，则是我最要好的“哥们儿”。他们的结合，是我们一大班朋友一直以来最骄傲的成果，而他们的分开，则是我们从未料想过的结局。他很爱她，这是个众人皆知的秘密。一班朋友在一起，他俩是让我们羡慕也是被我们“嘲笑”最多的对象。我们常说：“他跟她在一起，是在既当爹又当妈的基础上，才偶尔客串一下男朋友。”他从不介意这些，享受着这样身兼三职的身份。</p>
+            </li>
+            
+        </ul>
+    </div>
+
+<script type="text/javascript">
+    // 法律服务-菜单选中与页面滚动绑定
+    var snavFn = {
+        on: function(it){
+            $(".law-list > .left > a").removeClass("on");
+            if(typeof(it) == "object"){
+                $(it).addClass("on");
+            }else{
+                $(".law-list > .left > a:eq(" + it + ")").addClass("on");
+            }
+        }
+    }
+    $(function(){
+        $(".law-list > .left > a").click(function(){
+            var index = $(this).index();
+            snavFn.on(this);
+            $("html,body").animate({
+                scrollTop:$("#s-point" + (index + 1)).offset().top - 60
+            },300)
+            return false;
+        });
+        // 法律服务子菜单页面事件绑定
+        var snavArr = new Array();
+        function setSnavScroll(){
+            snavArr = new Array();
+            for(var i = 1; ;i ++ ){
+                if($("#s-point" + i).length){
+                    snavArr.push($("#s-point" + i).offset().top - 61);
+                }else{
+                    break;
+                }
+            }
+        };
+        var s_windowTimer;
+        $(window).scroll(function(){
+            clearTimeout(s_windowTimer);
+            s_windowTimer = setTimeout(function(){
+                setSnavScroll();
+                var num = $(window).scrollTop();
+                var x = 0;
+                for (var i = 0; i <= snavArr.length; i++) {
+                    if(num >= snavArr[i]){
+                        x = i;
+                    }
+                }
+                snavFn.on(x);
+            }, 50)
+        })
+
+        // 页面滚动时
+        $(window).scroll(function(){
+            if($(this).scrollTop() > 240){
+                $(".law-list > .left").addClass('fixed');
+            }else{
+                $(".law-list > .left").removeClass('fixed');
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,8 +1,5 @@
 $(function(){
 
-	$(".home-hero .bg").css("backgroundImage", "url(style/img/home_img_en.jpg)");
-
-
 	// 导航菜单
 	$("[cue='000']").text("MICRO FINANCE");
 
@@ -50,9 +47,9 @@ $(function(){
 
 	$("[cue='022']").text("Address：Room 78, Building 3, No.1-2 Warsaw Street, Moscow, Russia");
 
-	$("[cue='023']").text(" ");
+	$("[cue='023']").text("Все права защищены © 2003 – 2018.");
 
-	$("[cue='024']").text(" ");
+	$("[cue='024']").text("Автомобильный журнал «КОЛЕСА».");
 
 	$("[cue='025']").text("2017");
 
